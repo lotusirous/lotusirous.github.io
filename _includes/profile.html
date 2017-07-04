@@ -1,0 +1,16 @@
+<div class="profile">
+    <section id="wrapper">
+        <header id="header">
+        {% if site.aboutPage %}
+            <a href="{{ site.baseurl }}about">
+                <img id="avatar" src="{{ site.baseurl }}assets/images/avatar@2x1.png"/>
+            </a>
+        {% else %}
+            <img id="avatar" src="{{ site.baseurl }}assets/images/avatar@2x1.png"/>
+        {% endif %}
+            <h1>{{ site.author }}</h1>
+            <h2 class="headline">{{ site.description }}</h2>
+
+        </header>
+    </section>
+</div>

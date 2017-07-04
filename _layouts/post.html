@@ -1,27 +1,74 @@
 ---
 layout: default
+archive: true
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="artilce_header">
-    <h1 class="artilce_title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="artilce_meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
+<article class="post">
+    <header>
+        <h1 style="font: 300 32px/1.4em 'Nunito'">{{ page.title }}</h1>
+        <h2 class="headline">{{ page.date | date:"%B %-d, %Y" }}</h2>
 
-  <div class="article-content" itemprop="articleBody">
-    {{ page.content }}
-  </div>
+        <div style="padding-bottom: 25px;"></div>
+    </header>
+    <section id="post-body">
+        {{content}}
+    </section>
+    <div class="tagpost">
+    <div>
+        <i class="fa fa-tags"></i> Tags:  
+        {% for tag in page.tags %}
+            <a href="/tags#{{ tag }}-ref">{{ tag }}</a>
+        {% endfor %}
+    </div>
 
-  <footer class="article-footer">
-
-  {% include share.html %}
-
-  <hr/>
-
-  {% include author.html %}
-
-  </footer>
-
-  {% include dq.html %}
-
+    </div>
 </article>
+<footer id="post-meta" class="clearfix">
+    <a href="http://twitter.com/{{ site.authorTwitter }}">
+        <img class="avatar" src="{{ site.baseurl }}assets/images/avatar.png">
+        <div>
+            <span class="dark">{{ site.author }}</span>
+            <span>{{ site.description }}</span>
+        </div>
+    </a>
+
+    <section id="sharing">
+        {% include share.html %}
+    </section>
+
+
+</footer>
+<div class="PageNavigation">
+
+    {% if page.previous.url %}
+        <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+    {% else %}
+        <a class="prev"></a>
+    {% endif %}
+
+    {% if page.next.url %}
+        <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+    {% endif %}
+</div>
+<!-- Disqus comments -->
+{% if site.disqus %}
+    <div class="archive readmore">
+        <h3>Comments</h3>
+        {% include disqus.html %}
+    </div>
+{% endif %}
+
+<!-- Archive post list -->
+{% if page.archive %}
+    <ul id="post-list" class="archive readmore">
+        <h3>Read more</h3>
+        {% for post in site.posts %}
+            <li>
+                <a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}">{{ post.title }}<aside class="dates">{{ post.date | date:"%b %d" }}</aside></a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+

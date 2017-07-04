@@ -1,22 +1,8 @@
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer left column one-half">
-      <section class="small-font">
-        Theme <a href="https://github.com/wild-flame/jekyll-simple"> Simple </a> by <a href="http://wildflame.me">wildflame</a>
-        © 2016 
-        Powered by <a href="https://github.com/jekyll/jekyll">jekyll</a>
-      </section>
-    </div>
+<footer id="footer">
+<p class="small">Contact</p>
+<a href="https://github.com/ngtrongkha" class="column"><i class="fa fa-github"> </i> Github</a>
 
-    <div class="footer right column one-half">
-      <section class="small-font">
-        {% if site.github_username %}
-        {% include icon-github.html username=site.github_username %}
-        {% endif %}
-        {% if site.twitter_username %}
-        {% include icon-twitter.html username=site.twitter_username %}
-        {% endif %}
-      </section>
-    </div>
-  </div>
+<a href="https://twitter.com/__ngtrongkha" class="column"><i class="fa fa-twitter"> </i> Twitter</a>
+
+    <p class="small">© Copyright {{ site.time | date: '%Y' }} {{ site.author }}</p>
 </footer>

@@ -1,29 +1,43 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+gems: [jekyll-paginate]
+name: Trong Kha's Blog
+description: A goal is a dream with a deadline
+meta_description: "Trong Kha website, Blogging about thingking and security"
 
-# Site settings
-title: Lotusirous's Blog
-email: nguyentrongkha92@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  An awesome Blog starts from an awesome person.
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://lotusirous.github.io" # the base hostname & protocol for your site
-twitter_username: __ngtrongkha
-github_username:  lotusirous
+aboutPage: true
 
-# Build settings
-markdown: kramdown
-kramdown:
-  input: GFM
+markdown: redcarpet
+highlighter: pygments
 
-# Third-party services
-# just leave someone empty to disable it
-# google_analytics:
-disqus_shortname:
+paginate: 20
+baseurl: /
+domain_name: 'https://lotusirous.github.io'
+google_analytics: 'UA-73002749-1'
+disqus: true
+disqus_shortname: 'lotusirousgithubio'
 
-# used this for post_excerpt at index_page
-excerpt_separator: <!--description-->
+# Details for the RSS feed generator
+url:            'https://lotusirous.github.io'
+author:         'Trong Kha'
+authorTwitter:  'lotusirous'
+
+permalink:       /:year/:title/
+
+defaults:
+    -
+        scope:
+            path: "" # empty string for all files
+            type: pages
+        values:
+            layout: default
+    -
+        scope:
+            path: "" # empty string for all files
+            type: posts
+        values:
+            layout: post
+    -
+        scope:
+            path: ""
+            type: drafts
+        values:
+            layout: post

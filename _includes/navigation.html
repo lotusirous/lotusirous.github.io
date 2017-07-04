@@ -1,0 +1,40 @@
+<nav class="main-nav">
+        {% if page.path == "index.html"%}
+            <a href="{{ site.baseurl }}" style="border-bottom: 2px rgb(121, 173, 241) solid; color: #08487B;"> <i class="fa fa-home"></i> Home </a>
+            <a href="{{ site.baseurl }}projects">Projects</a>
+            <a href="{{ site.baseurl }}archives">Archives</a>
+            <a href="{{ site.baseurl }}about">About </a>
+        {% endif %}
+
+        {% if page.path == "projects.md"%}
+            <a href="{{ site.baseurl }}" > <i class="fa fa-home"></i> Home </a>
+            <a href="{{ site.baseurl }}projects" style="border-bottom: 2px rgb(121, 173, 241) solid; color: #08487B;">Projects</a>
+            <a href="{{ site.baseurl }}archives">Archives</a>
+            <a href="{{ site.baseurl }}about">About </a>
+        {% endif %}
+
+
+        {% if page.path == "archives.md"%}
+            <a href="{{ site.baseurl }}"> <i class="fa fa-home"></i> Home </a>
+            <a href="{{ site.baseurl }}projects">Projects</a>
+            <a href="{{ site.baseurl }}archives" style="border-bottom: 2px rgb(121, 173, 241) solid; color: #08487B;">Archives</a>
+            <a href="{{ site.baseurl }}about">About </a>
+        {% endif %}
+
+
+        {% if page.path == "about.md"%}
+            <a href="{{ site.baseurl }}"> <i class="fa fa-home"></i> Home </a>
+            <a href="{{ site.baseurl }}projects">Projects</a>
+            <a href="{{ site.baseurl }}archives">Archives</a>
+            <a href="{{ site.baseurl }}about" style="border-bottom: 2px rgb(121, 173, 241) solid; color: #08487B;" >About </a>
+        {% endif %}
+
+        {% if page.path != "about.md" and page.path != "archives.md" and page.path != "projects.md" and page.path != "index.html"%}
+            <a href="{{ site.baseurl }}"> <i class="fa fa-home"></i> Home </a>
+            <a href="{{ site.baseurl }}projects">Projects</a>
+            <a href="{{ site.baseurl }}archives">Archives</a>
+            <a href="{{ site.baseurl }}about" >About </a>
+        {% endif %}
+        <h1></h1>
+
+</nav>

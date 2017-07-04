@@ -1,0 +1,16 @@
+---
+title:  "new Blog()"
+date:   2013-11-10 10:18:00
+description: Start a new Blog
+tags: [blog]
+---
+
+So, I'm starting a new blog.
+
+Specifically, coding and security blog.
+
+```python
+blog = Blog()
+blog.start()
+```
+Thanks for follow me. Keep safe and secure!
