@@ -1,0 +1,118 @@
+body {
+     max-width: 800px;
+     margin: auto;
+     padding: 1em;
+     line-height: 1.5em;
+     text-align: justify;
+}
+ .avatar-circle {
+     border:4px solid white;
+     border-radius: 50%;
+     max-width:15%;
+     min-width:40px;
+     -webkit-box-shadow: 0px 0px 1px 0 rgba(0, 0, 0, 0.2), 0px 0px 13px 0 rgba(0, 0, 0, 0.19);
+     box-shadow: 0px 0px 1px 0 rgba(0, 0, 0, 0.2), 0px 0px 13px 0 rgba(0, 0, 0, 0.19);
+}
+ .icon {
+     display: inline-block;
+     height: 1em;
+     width: 1em;
+     stroke: currentColor;
+     fill: none;
+     position: relative;
+     top: 2px;
+}
+/* header and footer areas */
+ .menu {
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     justify-content: center;
+     -ms-flex-wrap: wrap;
+     flex-wrap: wrap;
+     padding: 0;
+}
+ .menu li {
+     display: inline-block;
+}
+ .menu a {
+     text-decoration: none;
+     border:1px dashed #ddd;
+    /*border-right:none;
+    */
+    /*border-left:1px dashed #ddd;
+    */
+     padding: 8px 20px;
+     line-height: 35px;
+     text-transform: uppercase;
+}
+ .article-meta {
+     text-decoration: none;
+     margin-bottom: 2em;
+     margin-top: 1em;
+}
+ .article-description {
+     font-style: italic;
+     color: #838383;
+}
+ .article-description span {
+     margin-left: 5px;
+     margin-right: 5px;
+}
+ .menu, .article-meta, footer {
+     text-align: center;
+}
+ .title {
+     font-size: 1.0em;
+}
+ footer a {
+     text-decoration: none;
+}
+ hr {
+     border-style: dashed;
+     color: #ddd;
+}
+/* code */
+ pre {
+     border: 1px solid #ddd;
+     -webkit-box-shadow: 5px 5px 5px #eee;
+     box-shadow: 5px 5px 5px #eee;
+     padding: 1em;
+     overflow-x: auto;
+}
+ code {
+     background: #f9f9f9;
+}
+ pre code {
+     background: none;
+}
+/* misc elements */
+ img, iframe, video {
+     max-width: 100%;
+}
+ main {
+     -webkit-hyphens: auto;
+     -ms-hyphens: auto;
+     hyphens: auto;
+}
+ blockquote {
+     background: #f9f9f9;
+     border-left: 5px solid #ccc;
+     padding: 3px 1em 3px;
+}
+ table {
+     margin: auto;
+     border-top: 1px solid #666;
+     border-bottom: 1px solid #666;
+}
+ table thead th {
+     border-bottom: 1px solid #ddd;
+}
+ th, td {
+     padding: 5px;
+}
+ thead, tfoot, tr:nth-child(even) {
+     background: #eee 
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Kha Nguyen</title>
+    <link>https://lotusirous.github.io/</link>
+    <description>Recent content in Home on Kha Nguyen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Mar 2009 00:07:14 +0000</lastBuildDate>
+    
+	<atom:link href="https://lotusirous.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install kubernetes cluster on Ubuntu</title>
+      <link>https://lotusirous.github.io/posts/first-post/</link>
+      <pubDate>Thu, 26 Mar 2009 00:07:14 +0000</pubDate>
+      
+      <guid>https://lotusirous.github.io/posts/first-post/</guid>
+      <description>Thought while my code was compiling and being tested I would throw up some thoughts about it. For those who don&amp;rsquo;t know you should probably go and read something else, since what follows is going to be pretty technical.
+So LINQ to SQL. At first I was totally opposed to it. The idea of taking a language that most developers know (SQL) and morphing it into something that .NET can use and slightly resembles SQL didn&amp;rsquo;t really appeal to me.</description>
+    </item>
+    
+  </channel>
+</rss>
