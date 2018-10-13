@@ -12,13 +12,14 @@
     
     
     <item>
-      <title>Install kubernetes cluster on Ubuntu</title>
-      <link>https://lotusirous.github.io/posts/first-post/</link>
+      <title>Serving deep learning models in production</title>
+      <link>https://lotusirous.github.io/posts/serving-deep-learning-in-production/</link>
       <pubDate>Thu, 26 Mar 2009 00:07:14 +0000</pubDate>
       
-      <guid>https://lotusirous.github.io/posts/first-post/</guid>
-      <description>Thought while my code was compiling and being tested I would throw up some thoughts about it. For those who don&amp;rsquo;t know you should probably go and read something else, since what follows is going to be pretty technical.
-So LINQ to SQL. At first I was totally opposed to it. The idea of taking a language that most developers know (SQL) and morphing it into something that .NET can use and slightly resembles SQL didn&amp;rsquo;t really appeal to me.</description>
+      <guid>https://lotusirous.github.io/posts/serving-deep-learning-in-production/</guid>
+      <description>Shipping deep learning models to production is a non-trivial task.
+There are many solutions out there which use cloud service providers from Google or Amazon. However, I am curious those process, thus I want to learn them and design my serving system. Since I do not favor any specific solution, I outline the following problems which need to be solved for designing a deep learning serving system:
+ Real-time collecting from various sources.</description>
     </item>
     
   </channel>

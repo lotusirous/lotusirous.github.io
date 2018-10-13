@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://lotusirous.github.io/posts/first-post/</loc>
+    <loc>https://lotusirous.github.io/posts/serving-deep-learning-in-production/</loc>
     <lastmod>2009-03-26T00:07:14+00:00</lastmod>
   </url>
   
@@ -13,7 +13,7 @@
   </url>
   
   <url>
-    <loc>https://lotusirous.github.io/categories/cloud/</loc>
+    <loc>https://lotusirous.github.io/categories/deep-learing/</loc>
     <lastmod>2009-03-26T00:07:14+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -30,7 +30,7 @@
   </url>
   
   <url>
-    <loc>https://lotusirous.github.io/categories/setup-guide/</loc>
+    <loc>https://lotusirous.github.io/categories/serving/</loc>
     <lastmod>2009-03-26T00:07:14+00:00</lastmod>
     <priority>0</priority>
   </url>
