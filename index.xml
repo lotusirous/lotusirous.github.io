@@ -18,7 +18,7 @@
       
       <guid>https://lotusirous.github.io/posts/serving-deep-learning-in-production/</guid>
       <description>Shipping deep learning models to production is a non-trivial task.
-There are many solutions out there which use cloud service providers from Google or Amazon. However, I am curious those process, thus I want to learn them and design my serving system. Since I do not favor any specific solution, I outline the following problems which need to be solved for designing a deep learning serving system:
+There are many solutions out there which use cloud service providers from Google or Amazon. However, I am curious those processes, thus I want to learn them and design my serving system. Since I do not favor any specific solution, I outline the following problems which need to be solved in designing a deep learning serving system:
  Real-time collecting from various sources.</description>
     </item>
     
