@@ -6,10 +6,21 @@
     <description>Recent content in Home on Kha Nguyen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 26 Mar 2009 00:07:14 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Oct 2018 14:09:49 +0900</lastBuildDate>
     
 	<atom:link href="https://lotusirous.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Compile python in Ubuntu</title>
+      <link>https://lotusirous.github.io/posts/compile-python/</link>
+      <pubDate>Sun, 21 Oct 2018 14:09:49 +0900</pubDate>
+      
+      <guid>https://lotusirous.github.io/posts/compile-python/</guid>
+      <description>Compile python in Ubuntu Sometimes, you want to install latest python version because of various cool features and performance improvements. However, many PPA are not always available for latest version. Once, you have many python version, you will need a version manager such as pyenv or pipenv
+This guide helps you to install python in Ubuntu under directory /usr/local/lib/python3.7.
+ This method can be applied for any python version</description>
+    </item>
     
     <item>
       <title>Serving deep learning models in production</title>
