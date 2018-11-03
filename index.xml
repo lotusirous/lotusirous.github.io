@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kha Nguyen</title>
+    <title>Home on Kha Nguyen</title>
     <link>https://lotusirous.github.io/</link>
-    <description>Recent content on Kha Nguyen</description>
+    <description>Recent content in Home on Kha Nguyen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 16 Sep 2018 03:09:28 +0900</lastBuildDate>
@@ -18,6 +18,17 @@
       
       <guid>https://lotusirous.github.io/posts/flask-kubernetes/</guid>
       <description>In this post, I will show</description>
+    </item>
+    
+    <item>
+      <title>Serving deep learning models in production</title>
+      <link>https://lotusirous.github.io/posts/serving-deep-learning-in-production/</link>
+      <pubDate>Thu, 26 Mar 2009 00:07:14 +0000</pubDate>
+      
+      <guid>https://lotusirous.github.io/posts/serving-deep-learning-in-production/</guid>
+      <description>Shipping deep learning models to production is a non-trivial task.
+There are many solutions out there which use cloud service providers from Google or Amazon. However, I am curious those processes, thus I want to learn them and design my serving system. Since I do not favor any specific solution, I outline the following problems which need to be solved in designing a deep learning serving system:
+ Real-time collecting from various sources.</description>
     </item>
     
     <item>
