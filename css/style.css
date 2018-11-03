@@ -104,13 +104,14 @@ pre {
 }
 
 code {
-    background: #f9f9f9;
-    padding: 2px;
-    border-radius: 1px;
+    padding: 4px;
+    border: 1px solid #ddd;
 }
 
 pre code {
     background: none;
+    box-shadow: none;
+    border: none;
 }
 
 /* misc elements */
