@@ -23,15 +23,6 @@ shell&amp;gt; docker logs mysql1 2&amp;gt;&amp;amp;1 | grep GENERATED GENERATED 
     </item>
     
     <item>
-      <title>Deploy Flask app on kubernetes cluster</title>
-      <link>https://lotusirous.github.io/posts/flask-kubernetes/</link>
-      <pubDate>Sun, 16 Sep 2018 03:09:28 +0900</pubDate>
-      
-      <guid>https://lotusirous.github.io/posts/flask-kubernetes/</guid>
-      <description>In this post, I will show</description>
-    </item>
-    
-    <item>
       <title>Serving deep learning models in production</title>
       <link>https://lotusirous.github.io/posts/serving-deep-learning-in-production/</link>
       <pubDate>Thu, 26 Mar 2009 00:07:14 +0000</pubDate>

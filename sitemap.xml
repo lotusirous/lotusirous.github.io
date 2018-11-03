@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>https://lotusirous.github.io/posts/flask-kubernetes/</loc>
-    <lastmod>2018-09-16T03:09:28+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://lotusirous.github.io/posts/serving-deep-learning-in-production/</loc>
     <lastmod>2009-03-26T00:07:14+00:00</lastmod>
   </url>
