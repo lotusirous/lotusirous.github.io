@@ -6,10 +6,21 @@
     <description>Recent content in Home on Kha Nguyen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 16 Sep 2018 03:09:28 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 04 Nov 2018 00:17:26 +0900</lastBuildDate>
     
 	<atom:link href="https://lotusirous.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mysql Container</title>
+      <link>https://lotusirous.github.io/posts/mysql-container/</link>
+      <pubDate>Sun, 04 Nov 2018 00:17:26 +0900</pubDate>
+      
+      <guid>https://lotusirous.github.io/posts/mysql-container/</guid>
+      <description>Install mysql as container shell&amp;gt; docker pull mysql/mysql-server shell&amp;gt; docker images shell&amp;gt; docker run --name=mysql1 -d mysql/mysql-server It generates default root password
+shell&amp;gt; docker logs mysql1 use generated password for login by root user
+shell&amp;gt; docker logs mysql1 2&amp;gt;&amp;amp;1 | grep GENERATED GENERATED ROOT PASSWORD: Axegh3kAJyDLaRuBemecis&amp;amp;EShOs Connecting to MySQL Server from within the Container docker exec -it mysql1 mysql -uroot -p by password: Axegh3kAJyDLaRuBemecis&amp;amp;EShOs. Since we cannot query, we have to change default password</description>
+    </item>
     
     <item>
       <title>Deploy Flask app on kubernetes cluster</title>
