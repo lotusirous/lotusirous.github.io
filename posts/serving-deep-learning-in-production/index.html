@@ -13,6 +13,7 @@
 
   <body role="main">
     <nav role="navigation">
+      <ul class="menu">
         
         <li><a href="/about">About</a></li>
         
@@ -71,6 +72,63 @@
 <main role="main">
   <p><img src="/serving-deep-learning-in-production/deep-learning.jpg" alt="Deep learning" />
 Shipping deep learning models to production is a non-trivial task.</p>
+
+<p>There are many solutions out there which use cloud service providers from Google or Amazon. However, I am curious those processes, thus I want to learn them and design my serving system. Since I do not favor any specific solution, I outline the following problems which need to be solved in designing a deep learning serving system:</p>
+
+<ul>
+<li>Real-time collecting from various sources.</li>
+<li>Serving and manage many models.</li>
+<li>Compute results under 2 seconds for 10.000 requests per seconds.</li>
+<li>Ranking models by detection results.</li>
+<li>The system should be scalable, load balancing and fault-tolerant</li>
+<li>System monitoring.</li>
+<li>Model should be signed.</li>
+</ul>
+
+<p>Those requirements address the problem of serving models resulting from machine learning in streaming applications. In this series, I will show how to export a deep learning model from various frameworks (Keras, TensorFlows, etc.).</p>
+
+<p>I hope this series provides the guidance you need for implementing your own solution. The following is a list of the articles in this series.</p>
+
+<ul>
+<li>Chapter 1: Describes the overall proposed architecture.</li>
+<li>Chapter 2: Installation dependencies softwares</li>
+<li>Chapter 3: Evaluating system</li>
+<li>Chapter 4: Demo</li>
+</ul>
+
+</main>
+
+<footer role="contentinfo">
+
+  <hr>
+  © <a href="https://lotusirous.github.io/" role="link">Kha Nguyen</a> | <a href="https://github.com/lotusirous" role="link">Github</a>
+  | <a href="https://twitter.com/__ngtrongkha" role="link">Twitter</a>
+
+
+  
+</footer>
+</body>
+
+
+<script>
+  
+  (function () {
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$(.|\s)+\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML; 
+          continue;
+        }
+      }
       i++;
     }
   })();
@@ -101,66 +159,6 @@ Shipping deep learning models to production is a non-trivial task.</p>
       center_el(tagNames[i]);
     }
   })();
-=======
-<footer role="footer" class="footer">
-  <div class="footer-content">
-<hr>
-© <a href="https://lotusirous.github.io/" role="link">Kha Nguyen</a> | <a href="https://github.com/lotusirous" role="link">Github</a> | <a href="https://twitter.com/__ngtrongkha" role="link">Twitter</a>
-</div>
-
-  
-  </footer>
-
-  <script>
-    
-    (function () {
-        var i, text, code, codes = document.getElementsByTagName('code');
-        for (i = 0; i < codes.length;) {
-            code = codes[i];
-            if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
-                text = code.textContent;
-                if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
-                    text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
-                    code.textContent = text;
-                }
-                if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
-                    /^\$(.|\s)+\$$/.test(text) ||
-                    /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
-                    code.outerHTML = code.innerHTML; 
-                    continue;
-                }
-            }
-            i++;
-        }
-    })();
-
-    
-
-    (function () {
-        function center_el(tagName) {
-            var tags = document.getElementsByTagName(tagName),
-                i, tag;
-            for (i = 0; i < tags.length; i++) {
-                tag = tags[i];
-                var parent = tag.parentElement;
-                
-                if (parent.childNodes.length === 1) {
-                    
-                    if (parent.nodeName === 'A') {
-                        parent = parent.parentElement;
-                        if (parent.childNodes.length != 1) continue;
-                        parent.firstChild.style.border = 'none';
-                    }
-                    if (parent.nodeName === 'P') parent.style.textAlign = 'center';
-                }
-            }
-        }
-        var tagNames = ['img', 'embed', 'object'];
-        for (var i = 0; i < tagNames.length; i++) {
-            center_el(tagNames[i]);
-        }
-    })();
->>>>>>> f2215ef780cd552bc137cc4e29c04ec5f379d875
 </script>
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
