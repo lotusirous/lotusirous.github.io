@@ -105,6 +105,8 @@ pre {
 
 code {
     background: #f9f9f9;
+    padding: 2px;
+    border-radius: 1px;
 }
 
 pre code {
