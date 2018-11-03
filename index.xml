@@ -1,24 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Kha Nguyen</title>
+    <title>Kha Nguyen</title>
     <link>https://lotusirous.github.io/</link>
-    <description>Recent content in Home on Kha Nguyen</description>
+    <description>Recent content on Kha Nguyen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 26 Mar 2009 00:07:14 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Sep 2018 03:09:28 +0900</lastBuildDate>
     
 	<atom:link href="https://lotusirous.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Install kubernetes cluster on Ubuntu</title>
-      <link>https://lotusirous.github.io/posts/first-post/</link>
-      <pubDate>Thu, 26 Mar 2009 00:07:14 +0000</pubDate>
+      <title>Deploy Flask app on kubernetes cluster</title>
+      <link>https://lotusirous.github.io/posts/flask-kubernetes/</link>
+      <pubDate>Sun, 16 Sep 2018 03:09:28 +0900</pubDate>
       
-      <guid>https://lotusirous.github.io/posts/first-post/</guid>
-      <description>Thought while my code was compiling and being tested I would throw up some thoughts about it. For those who don&amp;rsquo;t know you should probably go and read something else, since what follows is going to be pretty technical.
-So LINQ to SQL. At first I was totally opposed to it. The idea of taking a language that most developers know (SQL) and morphing it into something that .NET can use and slightly resembles SQL didn&amp;rsquo;t really appeal to me.</description>
+      <guid>https://lotusirous.github.io/posts/flask-kubernetes/</guid>
+      <description>In this post, I will show</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lotusirous.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lotusirous.github.io/about/</guid>
+      <description>Keep it simple, but not simpler
+ Hi, I&amp;rsquo;m Kha Nguyen.
+I&amp;rsquo;m a web security researcher. Occasionally, I share my thoughts on programming, ctf write-up and life experiences right here on my blog.
+Follow my journey through this new blog.</description>
     </item>
     
   </channel>
