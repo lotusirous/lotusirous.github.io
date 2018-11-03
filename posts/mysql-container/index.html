@@ -83,7 +83,9 @@ shell&gt; docker run --name<span class="o">=</span>mysql1 -d mysql/mysql-server<
 GENERATED ROOT PASSWORD: Axegh3kAJyDLaRuBemecis<span class="p">&amp;</span>EShOs</code></pre></div>
 <h2 id="connecting-to-mysql-server-from-within-the-container">Connecting to MySQL Server from within the Container</h2>
 <div class="highlight"><pre class="chroma">docker exec -it mysql1 mysql -uroot -p</pre></div>
-<p>by password: <code>Axegh3kAJyDLaRuBemecis&amp;EShOs</code>. At this step, Mysql does not allow you to query such as <code>show databases</code>, thus we have to change default password</p>
+<p>by password: <code>Axegh3kAJyDLaRuBemecis&amp;EShOs</code>.</p>
+
+<p>At this step, Mysql does not allow you to query such as <code>show databases</code>, thus we have to change default password</p>
 <div class="highlight"><pre class="chroma">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;newpassword&#39;;</pre></div>
 <h2 id="where-is-our-data">Where is our data ?</h2>
 
