@@ -18,8 +18,8 @@
       
       <guid>https://lotusirous.github.io/posts/mysql-container/</guid>
       <description>I prefer using database container for development because of environment isolation. You can remove stop/remove container whenever you want to. In this tutorial, I show a basic steps for up-and-run a mysql container 5.7 for development.
-Pull mysql container shell&amp;gt; docker pull mysql/mysql-server:5.7 shell&amp;gt; docker images shell&amp;gt; docker run --name=mysql1 -d mysql/mysql-server:5.7 It generates default root password. Use the following command to show container log
-shell&amp;gt; docker logs -f mysql1 However, It might take a few minute to initialize the container.</description>
+Pull mysql container docker pull mysql/mysql-server:5.7 docker images docker run --name=mysql1 -p 3306:3306 -d mysql/mysql-server:5.7 It generates default root password. Use the following command to show container log
+docker logs -f mysql1 However, It might take a few minute to initialize the container.</description>
     </item>
     
     <item>

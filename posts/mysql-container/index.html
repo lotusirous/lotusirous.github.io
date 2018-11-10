@@ -62,7 +62,7 @@
         <circle cx="12" cy="12" r="10"></circle>
         <polyline points="12 6 12 12 15 15"></polyline>
       </svg>
-      1 minutes
+      2 minutes
     </span>
   </div>
 
@@ -75,20 +75,22 @@
 <p>I prefer using database container for development because of environment isolation. You can remove stop/remove container whenever you want to. In this tutorial, I show a basic steps for up-and-run a mysql container 5.7 for development.</p>
 
 <h2 id="pull-mysql-container">Pull mysql container</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shell&gt; docker pull mysql/mysql-server:5.7
-shell&gt; docker images
-shell&gt; docker run --name<span class="o">=</span>mysql1 -d mysql/mysql-server:5.7</code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker pull mysql/mysql-server:5.7
+docker images
+docker run --name<span class="o">=</span>mysql1 -p <span class="m">3306</span>:3306 -d mysql/mysql-server:5.7</code></pre></div>
 <p>It generates default <em>root</em> password. Use the following command to show container log</p>
-<div class="highlight"><pre class="chroma">shell&gt; docker logs -f mysql1</pre></div>
-<p>However, It might take a few minute to initialize the container. At the first time, It generates a default password for <em>root</em> user as follows.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shell&gt; docker logs mysql1 <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> grep GENERATED
+<div class="highlight"><pre class="chroma">docker logs -f mysql1</pre></div>
+<p>However, It might take a few minute to initialize the container. At the first time, It generates a default password for <strong>root</strong> user as follows.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker logs mysql1 <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> grep GENERATED
 GENERATED ROOT PASSWORD: Axegh3kAJyDLaRuBemecis<span class="p">&amp;</span>EShOs</code></pre></div>
 <h2 id="connecting-to-mysql-server-from-within-the-container">Connecting to MySQL Server from within the Container</h2>
 <div class="highlight"><pre class="chroma">docker exec -it mysql1 mysql -uroot -p</pre></div>
 <p>by password: <code>Axegh3kAJyDLaRuBemecis&amp;EShOs</code>.</p>
 
 <p>At this step, Mysql does not allow you to query such as <code>show databases</code>, thus we have to change default password</p>
-<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">ALTER</span> <span class="k">USER</span> <span class="s1">&#39;root&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;newpassword&#39;</span><span class="p">;</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">ALTER</span> <span class="k">USER</span> <span class="s1">&#39;root&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;newpassword&#39;</span><span class="p">;</span>
+<span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="o">*</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;root&#39;</span><span class="o">@</span><span class="s1">&#39;172.17.0.1&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;newpassword&#39;</span><span class="p">;</span>
+<span class="n">FLUSH</span> <span class="k">PRIVILEGES</span><span class="p">;</span></code></pre></div>
 <h2 id="where-is-our-data">Where is our data ?</h2>
 
 <p>In container</p>
@@ -98,6 +100,9 @@ auto.cnf    ca.pem	     client-key.pem  ib_logfile0  ibdata1  mysql       mysql.
 ca-key.pem  client-cert.pem  ib_buffer_pool  ib_logfile1  ibtmp1   mysql.sock  performance_schema  public_key.pem   server-key.pem</pre></div><div class="highlight"><pre class="chroma">docker inspect mysql1</pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;Volumes&#34;</span><span class="err">:</span> <span class="p">{</span>
     <span class="nt">&#34;/var/lib/mysql&#34;</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">}</span></code></pre></div>
+<h2 id="stop-all-running-container">Stop all running container</h2>
+<div class="highlight"><pre class="chroma">docker stop $(docker ps -qa)
+docker rm -f $(docker ps -qa)</pre></div>
 <h2 id="references">References</h2>
 
 <ul>
