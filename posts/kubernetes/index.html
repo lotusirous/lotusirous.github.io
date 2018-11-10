@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Description" content="Lotusirous's Blog">
-    <title>Running Mysql server in container | Kha Nguyen</title>
+    <title>Kubernetes Cluster | Kha Nguyen</title>
 
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
@@ -32,7 +32,7 @@
 
 
 <div class="article-meta">
-  <h1 role="heading"><span class="title">Running Mysql server in container</span></h1>
+  <h1 role="heading"><span class="title">Kubernetes Cluster</span></h1>
   <div class="article-description" role="contentinfo">
 
     
@@ -44,7 +44,7 @@
         <line x1="8" y1="2" x2="8" y2="6"></line>
         <line x1="3" y1="10" x2="21" y2="10"></line>
       </svg>
-      <time datetime="2018-11-04 00:17:26 &#43;0900 KST">November 4, 2018</time>
+      <time datetime="2018-09-16 03:11:11 &#43;0900 KST">September 16, 2018</time>
     </span>
 
     
@@ -53,7 +53,7 @@
         <path d="M21,21V20c0-2.76-4-5-9-5s-9,2.24-9,5v1"></path>
         <path d="M16,6.37A4,4,0,1,1,12.63,3,4,4,0,0,1,16,6.37Z"></path>
       </svg>
-      
+      Kha NT
     </span>
 
     
@@ -72,36 +72,31 @@
 <main role="main">
   
 
-<h2 id="install-mysql-as-container">Install mysql as container</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shell&gt; docker pull mysql/mysql-server
-shell&gt; docker images
-shell&gt; docker run --name<span class="o">=</span>mysql1 -d mysql/mysql-server</code></pre></div>
-<p>It generates default <em>root</em> password. Use the following command to show container log</p>
-<div class="highlight"><pre class="chroma">shell&gt; docker logs -f mysql1</pre></div>
-<p>However, It might take a few minute to initialize the container. At the first time, It generates a default password for <em>root</em> user as follows.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shell&gt; docker logs mysql1 <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> grep GENERATED
-GENERATED ROOT PASSWORD: Axegh3kAJyDLaRuBemecis<span class="p">&amp;</span>EShOs</code></pre></div>
-<h2 id="connecting-to-mysql-server-from-within-the-container">Connecting to MySQL Server from within the Container</h2>
-<div class="highlight"><pre class="chroma">docker exec -it mysql1 mysql -uroot -p</pre></div>
-<p>by password: <code>Axegh3kAJyDLaRuBemecis&amp;EShOs</code>.</p>
-
-<p>At this step, Mysql does not allow you to query such as <code>show databases</code>, thus we have to change default password</p>
-<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">ALTER</span> <span class="k">USER</span> <span class="s1">&#39;root&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;newpassword&#39;</span><span class="p">;</span></code></pre></div>
-<h2 id="where-is-our-data">Where is our data ?</h2>
-
-<p>In container</p>
-<div class="highlight"><pre class="chroma">shell&gt; docker exec -it mysql1 bash
-bash-4.2# ls /var/lib/mysql
-auto.cnf    ca.pem	     client-key.pem  ib_logfile0  ibdata1  mysql       mysql.sock.lock	   private_key.pem  server-cert.pem  sys
-ca-key.pem  client-cert.pem  ib_buffer_pool  ib_logfile1  ibtmp1   mysql.sock  performance_schema  public_key.pem   server-key.pem</pre></div><div class="highlight"><pre class="chroma">docker inspect mysql1</pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;Volumes&#34;</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nt">&#34;/var/lib/mysql&#34;</span><span class="p">:</span> <span class="p">{}</span>
-<span class="p">}</span></code></pre></div>
-<h1 id="references">References</h1>
+<p>A time line of software and architecture design:</p>
 
 <ul>
-<li><a href="https://dev.mysql.com/doc/mysql-installation-excerpt/5.5/en/docker-mysql-getting-started.html">https://dev.mysql.com/doc/mysql-installation-excerpt/5.5/en/docker-mysql-getting-started.html</a></li>
-<li><a href="https://dev.mysql.com/doc/mysql-installation-excerpt/5.5/en/docker-mysql-more-topics.html">https://dev.mysql.com/doc/mysql-installation-excerpt/5.5/en/docker-mysql-more-topics.html</a></li>
+<li>1985 - The C++ Programming Language</li>
+<li>1994 - Design Patterns: Elements of Reusable Object-Oriented Software</li>
+<li>1998 - J2EE</li>
+<li>2004 - Map/Reduce</li>
+<li>2006 - Borg</li>
+<li>2013 - Docker</li>
+<li>2014 - Kubernetes</li>
 </ul>
+
+<p>Container technique is a great tool for deploying a web application in server. The idea is similar to you download a application on iOS or Android for your usages. It defines a wrapper for application for scale and maintain easier than before.</p>
+
+<!-- History of container -->
+
+<p>The idea of container technique started from</p>
+
+<!-- Google takes container to next level -->
+
+<h1 id="install-kubernetes">Install kubernetes</h1>
+
+<h1 id="verify-installation">Verify installation</h1>
+
+<p>asdf</p>
 
 </main>
 
