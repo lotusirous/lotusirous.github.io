@@ -17,9 +17,9 @@
       <pubDate>Sun, 04 Nov 2018 00:17:26 +0900</pubDate>
       
       <guid>https://lotusirous.github.io/posts/mysql-container/</guid>
-      <description>Install mysql as container shell&amp;gt; docker pull mysql/mysql-server shell&amp;gt; docker images shell&amp;gt; docker run --name=mysql1 -d mysql/mysql-server It generates default root password. Use the following command to show container log
-shell&amp;gt; docker logs -f mysql1 However, It might take a few minute to initialize the container. At the first time, It generates a default password for root user as follows.
-shell&amp;gt; docker logs mysql1 2&amp;gt;&amp;amp;1 | grep GENERATED GENERATED ROOT PASSWORD: Axegh3kAJyDLaRuBemecis&amp;amp;EShOs Connecting to MySQL Server from within the Container docker exec -it mysql1 mysql -uroot -p by password: Axegh3kAJyDLaRuBemecis&amp;amp;EShOs.</description>
+      <description>Install mysql as container I prefer using database container for development because of environment isolation. You can remove stop/remove container whenever you want to. In this tutorial shows how to configure a mysql container for development.
+shell&amp;gt; docker pull mysql/mysql-server:5.7 shell&amp;gt; docker images shell&amp;gt; docker run --name=mysql1 -d mysql/mysql-server:5.7 It generates default root password. Use the following command to show container log
+shell&amp;gt; docker logs -f mysql1 However, It might take a few minute to initialize the container.</description>
     </item>
     
     <item>

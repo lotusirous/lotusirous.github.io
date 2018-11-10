@@ -73,9 +73,11 @@
   
 
 <h2 id="install-mysql-as-container">Install mysql as container</h2>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shell&gt; docker pull mysql/mysql-server
+
+<p>I prefer using database container for development because of environment isolation. You can remove stop/remove container whenever you want to. In this tutorial shows how to configure a mysql container for development.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shell&gt; docker pull mysql/mysql-server:5.7
 shell&gt; docker images
-shell&gt; docker run --name<span class="o">=</span>mysql1 -d mysql/mysql-server</code></pre></div>
+shell&gt; docker run --name<span class="o">=</span>mysql1 -d mysql/mysql-server:5.7</code></pre></div>
 <p>It generates default <em>root</em> password. Use the following command to show container log</p>
 <div class="highlight"><pre class="chroma">shell&gt; docker logs -f mysql1</pre></div>
 <p>However, It might take a few minute to initialize the container. At the first time, It generates a default password for <em>root</em> user as follows.</p>
