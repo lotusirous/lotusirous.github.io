@@ -72,9 +72,9 @@
 <main role="main">
   
 
-<h2 id="install-mysql-as-container">Install mysql as container</h2>
+<p>I prefer using database container for development because of environment isolation. You can remove stop/remove container whenever you want to. In this tutorial, I show a basic steps for up-and-run a mysql container 5.7 for development.</p>
 
-<p>I prefer using database container for development because of environment isolation. You can remove stop/remove container whenever you want to. In this tutorial shows how to configure a mysql container for development.</p>
+<h2 id="pull-mysql-container">Pull mysql container</h2>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">shell&gt; docker pull mysql/mysql-server:5.7
 shell&gt; docker images
 shell&gt; docker run --name<span class="o">=</span>mysql1 -d mysql/mysql-server:5.7</code></pre></div>
@@ -98,7 +98,7 @@ auto.cnf    ca.pem	     client-key.pem  ib_logfile0  ibdata1  mysql       mysql.
 ca-key.pem  client-cert.pem  ib_buffer_pool  ib_logfile1  ibtmp1   mysql.sock  performance_schema  public_key.pem   server-key.pem</pre></div><div class="highlight"><pre class="chroma">docker inspect mysql1</pre></div><div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;Volumes&#34;</span><span class="err">:</span> <span class="p">{</span>
     <span class="nt">&#34;/var/lib/mysql&#34;</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">}</span></code></pre></div>
-<h1 id="references">References</h1>
+<h2 id="references">References</h2>
 
 <ul>
 <li><a href="https://dev.mysql.com/doc/mysql-installation-excerpt/5.5/en/docker-mysql-getting-started.html">https://dev.mysql.com/doc/mysql-installation-excerpt/5.5/en/docker-mysql-getting-started.html</a></li>
