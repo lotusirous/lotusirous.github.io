@@ -3,49 +3,64 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://lotusirous.github.io/posts/mysql-container/</loc>
-    <lastmod>2018-11-04T00:17:26+09:00</lastmod>
+    <loc>/post/offline-install-tips/</loc>
+    <lastmod>2019-01-14T23:04:37+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://lotusirous.github.io/posts/serving-deep-learning-in-production/</loc>
-    <lastmod>2009-03-26T00:07:14+00:00</lastmod>
+    <loc>/post/install-kubernetes/</loc>
+    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://lotusirous.github.io/about/</loc>
+    <loc>/post/pretty-json-inside-vim/</loc>
+    <lastmod>2018-01-20T09:50:39+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://lotusirous.github.io/categories/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://lotusirous.github.io/categories/deep-learing/</loc>
-    <lastmod>2009-03-26T00:07:14+00:00</lastmod>
+    <loc>/tags/cloud/</loc>
+    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://lotusirous.github.io/</loc>
-    <lastmod>2018-11-04T00:17:26+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://lotusirous.github.io/posts/</loc>
-    <lastmod>2018-11-04T00:17:26+09:00</lastmod>
+    <loc>/categories/development/</loc>
+    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://lotusirous.github.io/categories/serving/</loc>
-    <lastmod>2009-03-26T00:07:14+00:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2019-01-14T23:04:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://lotusirous.github.io/tags/</loc>
+    <loc>/post/</loc>
+    <lastmod>2019-01-14T23:04:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/server/</loc>
+    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/tips/</loc>
+    <lastmod>2019-01-14T23:04:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   

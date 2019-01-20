@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kha&#39;s</title>
-    <link>/</link>
-    <description>Recent content on Kha&#39;s</description>
+    <title>Server on Kha&#39;s</title>
+    <link>/tags/server/</link>
+    <description>Recent content in Server on Kha&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Jan 2019 23:04:37 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 16 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/server/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Useful commands for offline installation</title>
-      <link>/post/offline-install-tips/</link>
-      <pubDate>Mon, 14 Jan 2019 23:04:37 +0900</pubDate>
-      
-      <guid>/post/offline-install-tips/</guid>
-      <description>&lt;p&gt;A collections of command for installing offline packages&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Install bare-metal kubernetes cluster</title>
@@ -27,15 +18,6 @@
       
       <guid>/post/install-kubernetes/</guid>
       <description>&lt;p&gt;Kubernetes is a orchestration for containers these day with a well-suited design in distributed system. In order to kick off your journey, this article provides a guide to install and troubleshoot a bare metal production-ready kubernetes cluster. A cluster is a set of tightly connected computers that work together to create a powerful computing system. The cluster in this guide contains three minimal CentOS virtual machines with 1 kubernetes master and 2 nodes.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Pretty Json Inside Vim</title>
-      <link>/post/pretty-json-inside-vim/</link>
-      <pubDate>Sat, 20 Jan 2018 09:50:39 +0900</pubDate>
-      
-      <guid>/post/pretty-json-inside-vim/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s pretty straightforward.&lt;/p&gt;</description>
     </item>
     
   </channel>
