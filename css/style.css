@@ -1208,8 +1208,8 @@ textarea {
 	}
 
 	.meta__item {
-		display: block;
-		margin-left: 0;
+		display: inline;
+		margin-left: 15px;
 	}
 
 	.authorbox {
