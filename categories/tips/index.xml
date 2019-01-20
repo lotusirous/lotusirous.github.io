@@ -6,19 +6,10 @@
     <description>Recent content in Tips on Kha&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Jan 2019 23:04:37 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jan 2018 09:50:39 +0900</lastBuildDate>
     
 	<atom:link href="/categories/tips/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Useful commands for offline installation</title>
-      <link>/post/offline-install-tips/</link>
-      <pubDate>Mon, 14 Jan 2019 23:04:37 +0900</pubDate>
-      
-      <guid>/post/offline-install-tips/</guid>
-      <description>&lt;p&gt;A collections of command for installing offline packages&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Pretty Json Inside Vim</title>
@@ -27,6 +18,15 @@
       
       <guid>/post/pretty-json-inside-vim/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s pretty straightforward.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Useful commands for offline installation</title>
+      <link>/post/offline-install-tips/</link>
+      <pubDate>Sat, 14 Jan 2017 23:04:37 +0900</pubDate>
+      
+      <guid>/post/offline-install-tips/</guid>
+      <description>&lt;p&gt;A collections of command for installing offline packages&lt;/p&gt;</description>
     </item>
     
   </channel>

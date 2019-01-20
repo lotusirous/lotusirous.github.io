@@ -6,19 +6,10 @@
     <description>Recent content on Kha&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Jan 2019 23:04:37 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 16 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Useful commands for offline installation</title>
-      <link>/post/offline-install-tips/</link>
-      <pubDate>Mon, 14 Jan 2019 23:04:37 +0900</pubDate>
-      
-      <guid>/post/offline-install-tips/</guid>
-      <description>&lt;p&gt;A collections of command for installing offline packages&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Install bare-metal kubernetes cluster</title>
@@ -36,6 +27,15 @@
       
       <guid>/post/pretty-json-inside-vim/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s pretty straightforward.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Useful commands for offline installation</title>
+      <link>/post/offline-install-tips/</link>
+      <pubDate>Sat, 14 Jan 2017 23:04:37 +0900</pubDate>
+      
+      <guid>/post/offline-install-tips/</guid>
+      <description>&lt;p&gt;A collections of command for installing offline packages&lt;/p&gt;</description>
     </item>
     
   </channel>
