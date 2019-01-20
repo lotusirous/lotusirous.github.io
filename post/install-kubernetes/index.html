@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Install bare-metal kubernetes cluster</title>
+	<title>Kha's - 카</title>
 	<link rel="stylesheet" href="/css/vs.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script src="/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="Install bare-metal kubernetes cluster for production.">
@@ -107,7 +107,7 @@ Kubernetes vs Docker Swarm describes <a href="https://platform9.com/blog/kuberne
 
 <p>For example, <code>flannel</code> requires enable forwarding <code>iptables</code>.</p>
 
-<pre><code class="language-bash">cat &lt;&lt;EOF &gt;  /etc/sysctl.d/k8s.conf
+<pre><code class="language-sh">cat &lt;&lt;EOF &gt;  /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 EOF
