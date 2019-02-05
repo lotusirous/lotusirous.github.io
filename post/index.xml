@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Kha&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 Feb 2019 20:01:47 +0700</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Alpine or scratch for go application</title>
+      <link>/post/alpine-or-scratch/</link>
+      <pubDate>Mon, 04 Feb 2019 20:01:47 +0700</pubDate>
+      
+      <guid>/post/alpine-or-scratch/</guid>
+      <description>Containers are becoming a popular way of deploying applications quickly, cheaply, and reliably. At the beginning, It started around 2004 with basic chroot and ulimit setups and enhanced in 2006 with the introduction of cgroups. The official Docker&amp;rsquo;s document defines general guidelines and recommendations for building best practice image. Build a minimal container image is one of them since it reduces attack surfaces. In addition, it also has many benefits:</description>
+    </item>
     
     <item>
       <title>Install bare-metal kubernetes cluster</title>
