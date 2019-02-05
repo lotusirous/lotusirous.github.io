@@ -21,15 +21,6 @@
     </item>
     
     <item>
-      <title>Install bare-metal kubernetes cluster</title>
-      <link>/post/install-kubernetes/</link>
-      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/install-kubernetes/</guid>
-      <description>&lt;p&gt;Kubernetes is a orchestration for containers these day with a well-suited design in distributed system. In order to kick off your journey, this article provides a guide to install and troubleshoot a bare metal production-ready kubernetes cluster. A cluster is a set of tightly connected computers that work together to create a powerful computing system. The cluster in this guide contains three minimal CentOS virtual machines with 1 kubernetes master and 2 nodes.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Pretty Json Inside Vim</title>
       <link>/post/pretty-json-inside-vim/</link>
       <pubDate>Sat, 20 Jan 2018 09:50:39 +0900</pubDate>
