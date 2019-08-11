@@ -30,27 +30,9 @@
     </item>
     
     <item>
-      <title>tip</title>
-      <link>/categories/tip/</link>
-      <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
-      
-      <guid>/categories/tip/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
-      <link>/categories/development/</link>
-      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tips</title>
+      <title>tips</title>
       <link>/categories/tips/</link>
-      <pubDate>Sat, 20 Jan 2018 09:50:39 +0900</pubDate>
+      <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
       
       <guid>/categories/tips/</guid>
       <description></description>
