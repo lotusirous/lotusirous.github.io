@@ -10,13 +10,13 @@
 <script>hljs.initHighlightingOnLoad();</script>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="Install bare-metal kubernetes cluster for production.">
-	<meta name="generator" content="Hugo 0.54.0" />
+	<meta name="generator" content="Hugo 0.56.3" />
 	<meta property="og:title" content="Install bare-metal kubernetes cluster" />
 <meta property="og:description" content="Install bare-metal kubernetes cluster for production." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/install-kubernetes/" />
-<meta property="article:published_time" content="2018-04-16T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2018-04-16T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-04-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-04-16T00:00:00+00:00" />
 
 	
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -67,17 +67,16 @@
 <p>The following is requirements for our setup guide:</p>
 
 <ol>
-<li>3 virtual machines (VMWare or VirtualBox) have <code>/etc/hosts</code> as follows:</li>
-</ol>
+<li><p>3 virtual machines (VMWare or VirtualBox) have <code>/etc/hosts</code> as follows:</p>
 
 <pre><code class="language-txt">192.168.233.160 master.local
 192.168.233.162 node2.local
 192.168.233.161 node1.local
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>2 GB or more of RAM per machine. 2 CPUs or more on the master.</li>
-<li>High-speed network connection between machines.</li>
+<li><p>2 GB or more of RAM per machine. 2 CPUs or more on the master.</p></li>
+
+<li><p>High-speed network connection between machines.</p></li>
 </ol>
 
 <h2 id="installation">Installation</h2>
@@ -301,23 +300,21 @@ May 28 01:47:15 master NetworkManager[678]: &lt;info&gt;  [1527486435.9640] devi
 
 <h3 id="step-3-verify-results">Step 3. Verify results</h3>
 
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Running nodes</label></li>
-</ul>
+<ul>
+<li><p>[ ] Running nodes</p>
 
 <pre><code>[test@master ~]$ kubectl get nodes
 NAME           STATUS    ROLES     AGE       VERSION
 master.local   Ready     master    8m        v1.10.3
 node1.local    Ready     &lt;none&gt;    8m        v1.10.3
 node2.local    Ready     &lt;none&gt;    8m        v1.10.3
-</code></pre>
+</code></pre></li>
 
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> <strong>Make sure container images is enough and correct tag version in case of offline installation</strong></label></li>
+<li><p>[ ] <strong>Make sure container images is enough and correct tag version in case of offline installation</strong></p>
+
+<pre><code>[root@master test]# docker images -a
+</code></pre></li>
 </ul>
-
-<pre><code>  [root@master test]# docker images -a
-</code></pre>
 
 <h3 id="run-hello-world-deployment">Run hello world deployment</h3>
 
@@ -362,23 +359,22 @@ kubectl describe deployments hello-world
 
 <ul>
 <li>Disable SELinux by setting value <code>SELINUX=disabled</code> in <code>/etc/selinux/config</code></li>
-<li>Disable permanent swap for kubernetes scheduler optimizes resources. Remove swap partition at boot by commenting swap partition at boot in <code>/etc/fstab</code> or run-time machine by <code>swapoff -a</code></li>
-</ul>
+
+<li><p>Disable permanent swap for kubernetes scheduler optimizes resources. Remove swap partition at boot by commenting swap partition at boot in <code>/etc/fstab</code> or run-time machine by <code>swapoff -a</code></p>
 
 <pre><code class="language-py">print(&quot;hello world&quot;)
-</code></pre>
+</code></pre></li>
+</ul>
 
 <h3 id="allow-ports-on-firewall">Allow ports on firewall</h3>
 
 <ul>
-<li>Turn off (<code>firewalld</code> or <code>iptables</code>) using the commands</li>
-</ul>
+<li><p>Turn off (<code>firewalld</code> or <code>iptables</code>) using the commands</p>
 
 <pre><code class="language-txt">sudo systemctl stop firewalld &amp;&amp; sudo systemctl disable firewalld
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>It is a best practice to allow the following port on firewall</li>
+<li><p>It is a best practice to allow the following port on firewall</p></li>
 </ul>
 
 <p><strong>Master nodes</strong></p>
@@ -511,20 +507,23 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 
 <p><strong>Kubernetes</strong></p>
 
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> Use busybox images to debug <code>kube-dns</code> by <code>ping</code>, <code>nslookup</code>, <code>traceroute</code> tools. It is equivalent to <code>docker run -it busybox sh</code></label></li>
-</ul>
+<ul>
+<li><p>[ ] Use busybox images to debug <code>kube-dns</code> by <code>ping</code>, <code>nslookup</code>, <code>traceroute</code> tools. It is equivalent to <code>docker run -it busybox sh</code></p>
 
 <pre><code>kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
-</code></pre>
+</code></pre></li>
 
-<ul class="task-list">
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>journalctl -xe</code></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Check running container <code>docker ps</code></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Check the system log file <code>/var/log/messages</code> or <code>journalctl -u kubelet</code></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>kubectl describe pods</code></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>kubectl describe nodes</code></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> <code>kubectl logs</code></label></li>
+<li><p>[ ] <code>journalctl -xe</code></p></li>
+
+<li><p>[ ] Check running container <code>docker ps</code></p></li>
+
+<li><p>[ ] Check the system log file <code>/var/log/messages</code> or <code>journalctl -u kubelet</code></p></li>
+
+<li><p>[ ] <code>kubectl describe pods</code></p></li>
+
+<li><p>[ ] <code>kubectl describe nodes</code></p></li>
+
+<li><p>[ ] <code>kubectl logs</code></p></li>
 </ul>
 
 <p><strong>Docker</strong></p>
@@ -580,8 +579,8 @@ docker save k8s.gcr.io/pause-amd64:3.1 &gt; pause-amd64_3.1.tar
 
 <ul>
 <li>The installation for the minikube is pretty simple and straightforward.</li>
-<li>Execute the following script</li>
-</ul>
+
+<li><p>Execute the following script</p>
 
 <pre><code class="language-sh">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 &amp;&amp; chmod +x minikube
 curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl &amp;&amp; chmod +x kubectl
@@ -598,42 +597,39 @@ sudo -E ./minikube start --vm-driver=none
 
 # this for loop waits until kubectl can access the api server that Minikube has created
 for i in {1..150}; do # timeout for 5 minutes
-   ./kubectl get po &amp;&gt; /dev/null
-   if [ $? -ne 1 ]; then
-      break
-  fi
-  sleep 2
+./kubectl get po &amp;&gt; /dev/null
+if [ $? -ne 1 ]; then
+  break
+fi
+sleep 2
 done
 
 # kubectl commands are now able to interact with Minikube cluster
-</code></pre>
+</code></pre></li>
+</ul>
 
 <h2 id="offline-install">Offline Install</h2>
 
 <ul>
 <li>For the case offline, the binaries minikube, kubeadm, kubelet, and kubectl should be downloaded first. Also, make sure that docker is running, and the necessary docker images are all loaded. The list of docker images can be refer <a href="#step-3-verify-results">here</a></li>
 <li>Comment out curl in the script above, and run it.</li>
-<li>You will notice that it fails to download the kubeadm and kubelet</li>
-</ul>
+
+<li><p>You will notice that it fails to download the kubeadm and kubelet</p>
 
 <pre><code>Downloading kubelet v1.10.0
 Downloading kubeadm v1.10.0
 * E0615 08:20:33.420600   11477 start.go:252] Error updating cluster:  downloading binaries: downloading kubelet: Error downloading kubelet v1.10.0: failed to download: failed to download to temp file: download failed: 5 error(s) occurred:
 * Temporary download error: Get https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kubelet: dial tcp: lookup storage.googleapis.com on [::1]:53: read udp [::1]:53519-&gt;[::1]:53: read: connection refused                                                             * Temporary download error: Get https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kubelet: dial tcp: lookup storage.googleapis.com on [::1]:53: read udp [::1]:40795-&gt;[::1]:53: read: connection refused                                                             * Temporary download error: Get https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kubelet: dial tcp: lookup storage.googleapis.com on [::1]:53: read udp [::1]:56109-&gt;[::1]:53: read: connection refused                                                             * Temporary download error: Get https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kubelet: dial tcp: lookup storage.googleapis.com on [::1]:53: read udp [::1]:50708-&gt;[::1]:53: read: connection refused                                                             * Temporary download error: Get https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kubelet: dial tcp: lookup storage.googleapis.com on [::1]:53: read udp [::1]:49481-&gt;[::1]:53: read: connection refused
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>To solve this, copy the pre-downloaded kubelet and kubeadm to .minikube/cache/v1.10.0 and re-run it.</li>
-</ul>
+<li><p>To solve this, copy the pre-downloaded kubelet and kubeadm to .minikube/cache/v1.10.0 and re-run it.</p>
 
 <pre><code>$ ls ~/.minikube/cache/v1.10.0/
 kubeadm
 kubelet
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>Now you should see the message to indicate minikube sucessfully started.</li>
-</ul>
+<li><p>Now you should see the message to indicate minikube sucessfully started.</p>
 
 <pre><code>minikube config set WantKubectlDownloadMsg false
 Starting local Kubernetes v1.10.0 cluster...
@@ -649,7 +645,8 @@ Kubectl is now configured to use the cluster.
 WARNING: IT IS RECOMMENDED NOT TO RUN THE NONE DRIVER ON PERSONAL WORKSTATIONS
 The 'none' driver will run an insecure kubernetes apiserver as root that may leave the host vulnerable to CSRF attacks
 Loading cached images from config file.
-</code></pre>
+</code></pre></li>
+</ul>
 		</div>
 		
 <div class="post__tags tags clearfix">
@@ -679,7 +676,7 @@ Loading cached images from config file.
 		<a class="post-nav__link" href="/post/pretty-json-inside-vim/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">Pretty Json Inside Vim</p></a>
 	</div>
 	<div class="post-nav__item post-nav__item--next">
-		<a class="post-nav__link" href="/post/alpine-or-scratch/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">Alpine or scratch for go application</p></a>
+		<a class="post-nav__link" href="/post/update-docker/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">Update all docker images</p></a>
 	</div>
 </nav>
 
@@ -698,7 +695,7 @@ Loading cached images from config file.
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/alpine-or-scratch/">Alpine or scratch for go application</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/update-docker/">Update all docker images</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/install-kubernetes/">Install bare-metal kubernetes cluster</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/pretty-json-inside-vim/">Pretty Json Inside Vim</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/offline-install-tips/">Useful commands for offline installation</a></li>
@@ -709,7 +706,10 @@ Loading cached images from config file.
 	<h4 class="widget__title">Categories</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/container">Container</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/development">Development</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/devops">Devops</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/tip">Tip</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/tips">Tips</a></li>
 		</ul>
 	</div>

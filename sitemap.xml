@@ -3,8 +3,73 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/alpine-or-scratch/</loc>
-    <lastmod>2019-02-04T20:01:47+07:00</lastmod>
+    <loc>/categories/</loc>
+    <lastmod>2019-08-01T10:37:30+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-08-01T10:37:30+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-08-01T10:37:30+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/update-docker/</loc>
+    <lastmod>2019-08-01T10:37:30+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/container/</loc>
+    <lastmod>2019-08-01T10:37:30+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/devops/</loc>
+    <lastmod>2019-08-01T10:37:30+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/tip/</loc>
+    <lastmod>2019-08-01T10:37:30+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/development/</loc>
+    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/install-kubernetes/</loc>
+    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/cloud/</loc>
+    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/server/</loc>
+    <lastmod>2018-04-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -13,36 +78,14 @@
   </url>
   
   <url>
-    <loc>/post/offline-install-tips/</loc>
-    <lastmod>2017-01-14T23:04:37+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2019-02-04T20:01:47+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2019-02-04T20:01:47+07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/tips/</loc>
     <lastmod>2018-01-20T09:50:39+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/offline-install-tips/</loc>
+    <lastmod>2017-01-14T23:04:37+09:00</lastmod>
   </url>
   
 </urlset>

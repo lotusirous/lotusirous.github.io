@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>container on Kha&#39;s</title>
+    <link>/categories/container/</link>
+    <description>Recent content in container on Kha&#39;s</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Aug 2019 10:37:30 +0900</lastBuildDate>
+    
+	<atom:link href="/categories/container/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Update all docker images</title>
+      <link>/post/update-docker/</link>
+      <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
+      
+      <guid>/post/update-docker/</guid>
+      <description>Docker does not have a command to update images that you have already pulled in your system. Sometimes, we want to update an image with a latest fixes. It is similar to apt update &amp;amp;&amp;amp; apt upgrade in debian-based system. The following one-line command can help you update all images at with its tags.
+docker images |tail -n +2 |awk &#39;{t=$1&amp;quot;:&amp;quot;$2; print t}&#39; | xargs -L1 docker pull  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,18 +6,28 @@
     <description>Recent content in Posts on Kha&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Feb 2019 20:01:47 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 01 Aug 2019 10:37:30 +0900</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Alpine or scratch for go application</title>
-      <link>/post/alpine-or-scratch/</link>
-      <pubDate>Mon, 04 Feb 2019 20:01:47 +0700</pubDate>
+      <title>Update all docker images</title>
+      <link>/post/update-docker/</link>
+      <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
       
-      <guid>/post/alpine-or-scratch/</guid>
-      <description>Containers are becoming a popular way of deploying applications quickly, cheaply, and reliably. At the beginning, It started around 2004 with basic chroot and ulimit setups and enhanced in 2006 with the introduction of cgroups. The official Docker&amp;rsquo;s document defines general guidelines and recommendations for building best practice image. Build a minimal container image is one of them since it reduces attack surfaces. In addition, it also has many benefits:</description>
+      <guid>/post/update-docker/</guid>
+      <description>Docker does not have a command to update images that you have already pulled in your system. Sometimes, we want to update an image with a latest fixes. It is similar to apt update &amp;amp;&amp;amp; apt upgrade in debian-based system. The following one-line command can help you update all images at with its tags.
+docker images |tail -n +2 |awk &#39;{t=$1&amp;quot;:&amp;quot;$2; print t}&#39; | xargs -L1 docker pull  </description>
+    </item>
+    
+    <item>
+      <title>Install bare-metal kubernetes cluster</title>
+      <link>/post/install-kubernetes/</link>
+      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/install-kubernetes/</guid>
+      <description>&lt;p&gt;Kubernetes is a orchestration for containers these day with a well-suited design in distributed system. In order to kick off your journey, this article provides a guide to install and troubleshoot a bare metal production-ready kubernetes cluster. A cluster is a set of tightly connected computers that work together to create a powerful computing system. The cluster in this guide contains three minimal CentOS virtual machines with 1 kubernetes master and 2 nodes.&lt;/p&gt;</description>
     </item>
     
     <item>

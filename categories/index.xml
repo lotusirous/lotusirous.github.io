@@ -6,9 +6,46 @@
     <description>Recent content in Categories on Kha&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 01 Aug 2019 10:37:30 +0900</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>container</title>
+      <link>/categories/container/</link>
+      <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
+      
+      <guid>/categories/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>/categories/devops/</link>
+      <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
+      
+      <guid>/categories/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tip</title>
+      <link>/categories/tip/</link>
+      <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
+      
+      <guid>/categories/tip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>/categories/development/</link>
+      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/development/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Tips</title>
