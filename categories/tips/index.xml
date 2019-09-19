@@ -17,8 +17,7 @@
       <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
       
       <guid>/post/update-docker/</guid>
-      <description>Docker does not have a command to update images that you have already pulled in your system. Sometimes, we want to update an image with a latest fixes. It is similar to apt update &amp;amp;&amp;amp; apt upgrade in debian-based system. The following one-line command can help you update all images at with its tags.
-docker images |tail -n +2 |awk &#39;{t=$1&amp;quot;:&amp;quot;$2; print t}&#39; | xargs -L1 docker pull  </description>
+      <description>&lt;p&gt;Docker does not have a command to update images that you have already pulled in your system by default. Sometimes, we want to update image to latest version because of bugs or vulnerabilities. This action is similar to &lt;code&gt;apt update &amp;amp;&amp;amp; apt upgrade&lt;/code&gt; in debian-based system.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -31,12 +30,12 @@ docker images |tail -n +2 |awk &#39;{t=$1&amp;quot;:&amp;quot;$2; print t}&#39; 
     </item>
     
     <item>
-      <title>Useful commands for offline installation</title>
+      <title>Install packages offline on RHEL-based distribution</title>
       <link>/post/offline-install-tips/</link>
       <pubDate>Sat, 14 Jan 2017 23:04:37 +0900</pubDate>
       
       <guid>/post/offline-install-tips/</guid>
-      <description>&lt;p&gt;A collections of command for installing offline packages&lt;/p&gt;</description>
+      <description>&lt;p&gt;Some of my customers have policies to install packages in offline environment. This article summarized useful commands for working with RHEL server.&lt;/p&gt;</description>
     </item>
     
   </channel>

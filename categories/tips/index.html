@@ -4,13 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Kha's - 카</title>
-	<link rel="stylesheet" href="/css/vs.min.css">
-<script src="/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+	<title>tips - Kha&#39;s</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
-	<meta name="generator" content="Hugo 0.56.3" />
 	<meta property="og:title" content="tips" />
 <meta property="og:description" content="Trong Kha&#39;s Personal blog" />
 <meta property="og:type" content="website" />
@@ -24,6 +20,7 @@
 	<link rel="alternate" type="application/rss+xml" href="/categories/tips/index.xml" title="Kha's">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 	<link rel="stylesheet" href="/css/style.css">
+	
 	<link rel="shortcut icon" href="/favicon.ico">
 		
 </head>
@@ -53,21 +50,10 @@
 			Update all docker images
 			</a>
 		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2019-08-01T10:37:30">August 01, 2019</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/tips" rel="category">tips</a>, <a class="meta__link" href="/categories/devops" rel="category">devops</a>, <a class="meta__link" href="/categories/container" rel="category">container</a></span>
-</div>
-</div>
+		
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		Docker does not have a command to update images that you have already pulled in your system. Sometimes, we want to update an image with a latest fixes. It is similar to apt update &amp;&amp; apt upgrade in debian-based system. The following one-line command can help you update all images at with its tags.
-docker images |tail -n +2 |awk '{t=$1&quot;:&quot;$2; print t}' | xargs -L1 docker pull  
+		<p>Docker does not have a command to update images that you have already pulled in your system by default. Sometimes, we want to update image to latest version because of bugs or vulnerabilities. This action is similar to <code>apt update &amp;&amp; apt upgrade</code> in debian-based system.</p>
 	</div>
 </article><article class="list__item post">
 	<header class="list__header">
@@ -76,17 +62,7 @@ docker images |tail -n +2 |awk '{t=$1&quot;:&quot;$2; print t}' | xargs -L1 dock
 			Pretty Json Inside Vim
 			</a>
 		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2018-01-20T09:50:39">January 20, 2018</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/tips" rel="category">tips</a></span>
-</div>
-</div>
+		
 	</header>
 	<div class="content list__excerpt post__content clearfix">
 		<p>It&rsquo;s pretty straightforward.</p>
@@ -95,23 +71,13 @@ docker images |tail -n +2 |awk '{t=$1&quot;:&quot;$2; print t}' | xargs -L1 dock
 	<header class="list__header">
 		<h3 class="list__title post__title ">
 			<a href="/post/offline-install-tips/" rel="bookmark">
-			Useful commands for offline installation
+			Install packages offline on RHEL-based distribution
 			</a>
 		</h3>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg>
-	<time class="meta__text" datetime="2017-01-14T23:04:37">January 14, 2017</time>
-</div>
-
-<div class="meta__item-categories meta__item">
-	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-	<span class="meta__text"><a class="meta__link" href="/categories/tips" rel="category">tips</a></span>
-</div>
-</div>
+		
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		<p>A collections of command for installing offline packages</p>
+		<p>Some of my customers have policies to install packages in offline environment. This article summarized useful commands for working with RHEL server.</p>
 	</div>
 </article>
 </main>
@@ -132,9 +98,10 @@ docker images |tail -n +2 |awk '{t=$1&quot;:&quot;$2; print t}' | xargs -L1 dock
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/build-go-application/">Build a go web application pipeline</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/update-docker/">Update all docker images</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/pretty-json-inside-vim/">Pretty Json Inside Vim</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/offline-install-tips/">Useful commands for offline installation</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/offline-install-tips/">Install packages offline on RHEL-based distribution</a></li>
 		</ul>
 	</div>
 </div>
