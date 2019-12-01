@@ -6,21 +6,10 @@
     <description>Recent content in Posts on Kha&#39;s</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Aug 2019 12:50:37 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 01 Aug 2019 10:37:30 +0900</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Build a go web application pipeline</title>
-      <link>/post/build-go-application/</link>
-      <pubDate>Sun, 18 Aug 2019 12:50:37 +0900</pubDate>
-      
-      <guid>/post/build-go-application/</guid>
-      <description>&lt;p&gt;Build and deploy web application is necessary for any organization who uses golang as a main language to build their bushiness. This article summarized ways to build and deploy a golang application from a simple to a complex pipeline.
-The decision depends on architecture designer&amp;rsquo;s style.
-However, I recommend to follow 2 principles when designing a system: keep it simple and stupid (KISS) because you aren&amp;rsquo;t gonna need it (YAGNI).&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Update all docker images</title>
