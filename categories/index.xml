@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Kha&#39;s</title>
-    <link>/categories/</link>
-    <description>Recent content in Categories on Kha&#39;s</description>
+    <title>Categories on 𝙺 𝙷 𝙰.github.io</title>
+    <link>http://example.org/categories/</link>
+    <description>Recent content in Categories on 𝙺 𝙷 𝙰.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Aug 2019 10:37:30 +0900</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>container</title>
-      <link>/categories/container/</link>
+      <link>http://example.org/categories/container/</link>
       <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
       
-      <guid>/categories/container/</guid>
+      <guid>http://example.org/categories/container/</guid>
       <description></description>
     </item>
     
     <item>
       <title>devops</title>
-      <link>/categories/devops/</link>
+      <link>http://example.org/categories/devops/</link>
       <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
       
-      <guid>/categories/devops/</guid>
+      <guid>http://example.org/categories/devops/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tips</title>
-      <link>/categories/tips/</link>
+      <link>http://example.org/categories/tips/</link>
       <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
       
-      <guid>/categories/tips/</guid>
+      <guid>http://example.org/categories/tips/</guid>
       <description></description>
     </item>
     

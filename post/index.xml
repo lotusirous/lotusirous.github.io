@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Kha&#39;s</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on Kha&#39;s</description>
+    <title>Posts on 𝙺 𝙷 𝙰.github.io</title>
+    <link>http://example.org/post/</link>
+    <description>Recent content in Posts on 𝙺 𝙷 𝙰.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Aug 2019 10:37:30 +0900</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://example.org/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Update all docker images</title>
-      <link>/post/update-docker/</link>
+      <link>http://example.org/post/update-docker/</link>
       <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
       
-      <guid>/post/update-docker/</guid>
+      <guid>http://example.org/post/update-docker/</guid>
       <description>&lt;p&gt;Docker does not have a command to update images that you have already pulled in your system by default. Sometimes, we want to update image to latest version because of bugs or vulnerabilities. This action is similar to &lt;code&gt;apt update &amp;amp;&amp;amp; apt upgrade&lt;/code&gt; in debian-based system.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Pretty Json Inside Vim</title>
-      <link>/post/pretty-json-inside-vim/</link>
+      <link>http://example.org/post/pretty-json-inside-vim/</link>
       <pubDate>Sat, 20 Jan 2018 09:50:39 +0900</pubDate>
       
-      <guid>/post/pretty-json-inside-vim/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s pretty straightforward.&lt;/p&gt;</description>
+      <guid>http://example.org/post/pretty-json-inside-vim/</guid>
+      <description>&lt;p&gt;It&#39;s pretty straightforward.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Install packages offline on RHEL-based distribution</title>
-      <link>/post/offline-install-tips/</link>
+      <link>http://example.org/post/offline-install-tips/</link>
       <pubDate>Sat, 14 Jan 2017 23:04:37 +0900</pubDate>
       
-      <guid>/post/offline-install-tips/</guid>
+      <guid>http://example.org/post/offline-install-tips/</guid>
       <description>&lt;p&gt;Some of my customers have policies to install packages in offline environment. This article summarized useful commands for working with RHEL server.&lt;/p&gt;</description>
     </item>
     
