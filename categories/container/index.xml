@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>container on 𝙺 𝙷 𝙰.github.io</title>
-    <link>http://example.org/categories/container/</link>
+    <link>https://lotusirous.github.io/categories/container/</link>
     <description>Recent content in container on 𝙺 𝙷 𝙰.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Aug 2019 10:37:30 +0900</lastBuildDate>
     
-	<atom:link href="http://example.org/categories/container/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lotusirous.github.io/categories/container/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Update all docker images</title>
-      <link>http://example.org/post/update-docker/</link>
+      <link>https://lotusirous.github.io/post/update-docker/</link>
       <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
       
-      <guid>http://example.org/post/update-docker/</guid>
+      <guid>https://lotusirous.github.io/post/update-docker/</guid>
       <description>&lt;p&gt;Docker does not have a command to update images that you have already pulled in your system by default. Sometimes, we want to update image to latest version because of bugs or vulnerabilities. This action is similar to &lt;code&gt;apt update &amp;amp;&amp;amp; apt upgrade&lt;/code&gt; in debian-based system.&lt;/p&gt;</description>
     </item>
     
