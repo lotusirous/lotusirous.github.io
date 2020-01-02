@@ -13,10 +13,10 @@
     
     <item>
       <title>Update all docker images</title>
-      <link>https://lotusirous.github.io/post/update-docker/</link>
+      <link>https://lotusirous.github.io/posts/update-docker/</link>
       <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
       
-      <guid>https://lotusirous.github.io/post/update-docker/</guid>
+      <guid>https://lotusirous.github.io/posts/update-docker/</guid>
       <description>&lt;p&gt;Docker does not have a command to update images that you have already pulled in your system by default. Sometimes, we want to update image to latest version because of bugs or vulnerabilities. This action is similar to &lt;code&gt;apt update &amp;amp;&amp;amp; apt upgrade&lt;/code&gt; in debian-based system.&lt;/p&gt;</description>
     </item>
     

@@ -3,7 +3,7 @@
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.61.0" />
+  <meta name="generator" content="Hugo 0.62.1" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,41 +27,62 @@
 
   
   <link href="https://lotusirous.github.io/index.xml" rel="alternate" type="application/rss+xml" title="𝙺 𝙷 𝙰.github.io" />
-  </head>
+  <script>
+"use strict";
+
+document.addEventListener('DOMContentLoaded', function () {
+  
+  var enableBurgerNavButton = document.getElementById('navbarBurger');
+  var navBar = document.getElementById('navbar');
+  enableBurgerNavButton.addEventListener('click', function () {
+    enableBurgerNavButton.classList.toggle('is-active');
+    navBar.classList.toggle('is-active');
+  });
+});
+
+</script>
+</head>
 
   <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="container ">
-    <div class="column is-8 is-offset-2">
-      <div class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="/">
-            𝙲 🚘 𝚁 !
-          </a>
-        </div>
+    
 
-        <div class="navbar-end">
-          <a class="navbar-item" href="https://github.com/lotusirous">
-            <i data-feather="github"></i>
-          </a>
-          <a class="navbar-item" href="https://twitter.com/__ngtrongkha">
-            <i data-feather="twitter"></i>
-          </a>
-        </div>
-      </div>
+<nav class="navbar" role="navigation"  aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      𝙲 🚘 𝚁 !
+    </a>
+
+    
+    <a role="button" id="navbarBurger" class="navbar-burger" aria-label="menu"  aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+
+
+  </div>
+  <div class="navbar-menu" id="navbar">
+    <div class="navbar-end">
+
+      <a class="navbar-item" href="https://github.com/lotusirous">
+        Posts
+      </a>
+      <a class="navbar-item" href="https://github.com/lotusirous">
+        Security Research
+      </a>
+
+      <a class="navbar-item" href="https://github.com/lotusirous">
+        Hire me ! ✌️
+      </a>
+
     </div>
   </div>
+
+
 </nav>
 
 
 
-
-
-<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-  <span aria-hidden="true"></span>
-</a>
 
     <div class="container">
     <section class="section">
@@ -69,7 +90,7 @@
           <div class="column is-8 is-offset-2">
 
             <h1 class="title link-heading">
-              <a href="https://lotusirous.github.io/post/update-docker/">Update all docker images</a>
+              <a href="https://lotusirous.github.io/posts/update-docker/">Update all docker images</a>
             </h1>
 
             
@@ -82,7 +103,7 @@
               </div>
 
               <div class="read-more-link">
-                <a href="/post/update-docker/">Read More…</a>
+                <a href="/posts/update-docker/">Read More…</a>
               </div>
             
 
@@ -99,7 +120,7 @@
           <div class="column is-8 is-offset-2">
 
             <h1 class="title link-heading">
-              <a href="https://lotusirous.github.io/post/pretty-json-inside-vim/">Pretty Json Inside Vim</a>
+              <a href="https://lotusirous.github.io/posts/pretty-json-inside-vim/">Pretty Json Inside Vim</a>
             </h1>
 
             
@@ -112,7 +133,7 @@
               </div>
 
               <div class="read-more-link">
-                <a href="/post/pretty-json-inside-vim/">Read More…</a>
+                <a href="/posts/pretty-json-inside-vim/">Read More…</a>
               </div>
             
 
@@ -129,7 +150,7 @@
           <div class="column is-8 is-offset-2">
 
             <h1 class="title link-heading">
-              <a href="https://lotusirous.github.io/post/offline-install-tips/">Install packages offline on RHEL-based distribution</a>
+              <a href="https://lotusirous.github.io/posts/offline-install-tips/">Install packages offline on RHEL-based distribution</a>
             </h1>
 
             
@@ -142,7 +163,7 @@
               </div>
 
               <div class="read-more-link">
-                <a href="/post/offline-install-tips/">Read More…</a>
+                <a href="/posts/offline-install-tips/">Read More…</a>
               </div>
             
 
@@ -172,12 +193,20 @@ if (!doNotTrack) {
 
 
   </body>
-  <footer class="footer">
-    <div class="content has-text-centered">
+  <footer class="footer columns is-centered has-background-white">
+    <div class="column has-text-centered">
         <p>
-        <strong>Kha's Blog</strong> by <a href="https://jgthms.com">lotusirous</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+        <strong>lotusirous</strong> © 2020.
         </p>
+
+        <div>
+            <a  href="https://github.com/lotusirous">
+                <i data-feather="github"></i>
+            </a>
+            <a  href="https://twitter.com/__ngtrongkha">
+            <i data-feather="twitter"></i>
+            </a>
+        </div>
     </div>
 </footer>
   <script>

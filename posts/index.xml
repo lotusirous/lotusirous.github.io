@@ -1,36 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Kha Nguyen</title>
+    <title>Posts on 𝙺 𝙷 𝙰.github.io</title>
     <link>https://lotusirous.github.io/posts/</link>
-    <description>Recent content in Posts on Kha Nguyen</description>
+    <description>Recent content in Posts on 𝙺 𝙷 𝙰.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 04 Nov 2018 00:17:26 +0900</lastBuildDate>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Aug 2019 10:37:30 +0900</lastBuildDate>
     
 	<atom:link href="https://lotusirous.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Running Mysql server in container</title>
-      <link>https://lotusirous.github.io/posts/mysql-container/</link>
-      <pubDate>Sun, 04 Nov 2018 00:17:26 +0900</pubDate>
+      <title>Update all docker images</title>
+      <link>https://lotusirous.github.io/posts/update-docker/</link>
+      <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
       
-      <guid>https://lotusirous.github.io/posts/mysql-container/</guid>
-      <description>I prefer using database container for development because of environment isolation. You can remove stop/remove container whenever you want to. In this tutorial, I show a basic steps for up-and-run a mysql container 5.7 for development.
-Pull mysql container docker pull mysql/mysql-server:5.7 docker images docker run --name=mysql1 -p 3306:3306 -d mysql/mysql-server:5.7 It generates default root password. Use the following command to show container log
-docker logs -f mysql1 However, It might take a few minute to initialize the container.</description>
+      <guid>https://lotusirous.github.io/posts/update-docker/</guid>
+      <description>&lt;p&gt;Docker does not have a command to update images that you have already pulled in your system by default. Sometimes, we want to update image to latest version because of bugs or vulnerabilities. This action is similar to &lt;code&gt;apt update &amp;amp;&amp;amp; apt upgrade&lt;/code&gt; in debian-based system.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Serving deep learning models in production</title>
-      <link>https://lotusirous.github.io/posts/serving-deep-learning-in-production/</link>
-      <pubDate>Thu, 26 Mar 2009 00:07:14 +0000</pubDate>
+      <title>Pretty Json Inside Vim</title>
+      <link>https://lotusirous.github.io/posts/pretty-json-inside-vim/</link>
+      <pubDate>Sat, 20 Jan 2018 09:50:39 +0900</pubDate>
       
-      <guid>https://lotusirous.github.io/posts/serving-deep-learning-in-production/</guid>
-      <description>Shipping deep learning models to production is a non-trivial task.
-There are many solutions out there which use cloud service providers from Google or Amazon. However, I am curious those processes, thus I want to learn them and design my serving system. Since I do not favor any specific solution, I outline the following problems which need to be solved in designing a deep learning serving system:
- Real-time collecting from various sources.</description>
+      <guid>https://lotusirous.github.io/posts/pretty-json-inside-vim/</guid>
+      <description>&lt;p&gt;It&#39;s pretty straightforward.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Install packages offline on RHEL-based distribution</title>
+      <link>https://lotusirous.github.io/posts/offline-install-tips/</link>
+      <pubDate>Sat, 14 Jan 2017 23:04:37 +0900</pubDate>
+      
+      <guid>https://lotusirous.github.io/posts/offline-install-tips/</guid>
+      <description>&lt;p&gt;Some of my customers have policies to install packages in offline environment. This article summarized useful commands for working with RHEL server.&lt;/p&gt;</description>
     </item>
     
   </channel>
