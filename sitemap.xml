@@ -3,27 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://lotusirous.github.io/categories/</loc>
-    <lastmod>2019-08-01T10:37:30+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://lotusirous.github.io/categories/container/</loc>
-    <lastmod>2019-08-01T10:37:30+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://lotusirous.github.io/categories/devops/</loc>
-    <lastmod>2019-08-01T10:37:30+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://lotusirous.github.io/posts/</loc>
-    <lastmod>2019-08-01T10:37:30+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://lotusirous.github.io/categories/tips/</loc>
     <lastmod>2019-08-01T10:37:30+09:00</lastmod>
   </url>
   
@@ -45,6 +25,10 @@
   <url>
     <loc>https://lotusirous.github.io/posts/offline-install-tips/</loc>
     <lastmod>2017-01-14T23:04:37+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lotusirous.github.io/categories/</loc>
   </url>
   
   <url>
