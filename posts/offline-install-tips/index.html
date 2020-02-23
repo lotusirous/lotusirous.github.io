@@ -38,7 +38,7 @@
         
       </a>
     
-      <a href="/about/" >
+      <a href="mailto:ngtrongkha92@gmail.com" >
         
           
           
@@ -62,11 +62,11 @@
   <p>Some of my customers have policies to install packages in offline environment. This article summarized useful commands for working with RHEL server.</p>
 <h2 id="download-and-install-packages-for-rhel-distribution">Download and install packages for RHEL distribution</h2>
 <p>The following command prepares a folder with installation packages</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yum install --downloadonly --downloaddir<span style="color:#f92672">=</span>&lt;directory&gt; &lt;package&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">yum install --downloadonly --downloaddir<span style="color:#f92672">=</span>&lt;directory&gt; &lt;package&gt;
 yum --disablerepo<span style="color:#f92672">=</span>* localinstall *.rpm
 </code></pre></div><h2 id="install-python-package-from-local">Install python package from local</h2>
 <p>The following command installs <code>keras</code> package from local</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install --no-index --find-links . keras
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">pip install --no-index --find-links . keras
 </code></pre></div>
 </article>
 
