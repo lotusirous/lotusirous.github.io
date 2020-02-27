@@ -3,10 +3,10 @@
 <title>Update all docker images | 𝙺 𝙷 𝙰</title>
 <meta charset="utf-8">
 <meta name="generator" content="Hugo 0.65.3" />
-<meta name="description" content="Made with &lt;b style=&#39;color: #f45;&#39;&gt;&lt;3&lt;/b&gt;">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://lotusirous.github.io/css/index.css">
 <link rel="stylesheet" href="https://lotusirous.github.io/css/classes.css">
+<link rel="stylesheet" href="https://lotusirous.github.io/css/syntax.css">
 <link rel="stylesheet" href="https://lotusirous.github.io/css/sidebar.css" media="screen and (min-width: 70em)">
 <link rel="canonical" href="https://lotusirous.github.io/posts/update-docker/">
 <link rel="alternate" type="application/rss+xml" href="" title="𝙺 𝙷 𝙰">
@@ -50,8 +50,6 @@
     </nav>
   
   
-    <div class="hidden description">Made with <b style='color: #f45;'><3</b></div>
-  
 </header>
 
 <article>
@@ -61,7 +59,7 @@
   </header>
   <p>Docker does not have a command to update images that you have already pulled in your system by default. Sometimes, we want to update image to latest version because of bugs or vulnerabilities. This action is similar to <code>apt update &amp;&amp; apt upgrade</code> in debian-based system.</p>
 <p>The following one-line command can help you update all images at with its tags.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">docker images |tail -n +2 |awk <span style="color:#e6db74">&#39;{t=$1&#34;:&#34;$2; print t}&#39;</span> | xargs -L1 docker pull
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">docker images |tail -n +2 |awk <span style="color:#f1fa8c">&#39;{t=$1&#34;:&#34;$2; print t}&#39;</span> | xargs -L1 docker pull
 </code></pre></div>
 </article>
 
