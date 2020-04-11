@@ -26,7 +26,7 @@
       <pubDate>Sat, 20 Jan 2018 09:50:39 +0900</pubDate>
       
       <guid>https://lotusirous.github.io/posts/pretty-json-inside-vim/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s pretty straightforward.&lt;/p&gt;</description>
+      <description>&lt;p&gt;After installing &lt;a href=&#34;https://github.com/stedolan/jq&#34;&gt;jq&lt;/a&gt;, it&amp;rsquo;s pretty straightforward&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -36,6 +36,15 @@
       
       <guid>https://lotusirous.github.io/posts/offline-install-tips/</guid>
       <description>&lt;p&gt;Some of my customers have policies to install packages in offline environment. This article summarized useful commands for working with RHEL server.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lotusirous.github.io/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lotusirous.github.io/archive/</guid>
+      <description></description>
     </item>
     
     <item>
