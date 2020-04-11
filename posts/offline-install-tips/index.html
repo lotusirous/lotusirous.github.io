@@ -1,64 +1,157 @@
 <!DOCTYPE html>
-<html lang="en-us">
-<title>Install packages offline on RHEL-based distribution | 𝙺 𝙷 𝙰</title>
-<meta charset="utf-8">
-<meta name="generator" content="Hugo 0.68.3" />
-<meta name="description" content="Sometimes, you want to install a software in offline environment.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://lotusirous.github.io/css/index.css">
-<link rel="stylesheet" href="https://lotusirous.github.io/css/classes.css">
-<link rel="stylesheet" href="https://lotusirous.github.io/css/syntax.css">
-<link rel="stylesheet" href="https://lotusirous.github.io/css/sidebar.css" media="screen and (min-width: 70em)">
-<link rel="canonical" href="https://lotusirous.github.io/posts/offline-install-tips/">
-<link rel="alternate" type="application/rss+xml" href="" title="𝙺 𝙷 𝙰">
+<html lang="en">
+  <head>
+    
+      <title>Install packages offline on RHEL-based distribution :: 𝙺 𝙷 𝙰</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="Some of my customers have policies to install packages in offline environment. This article summarized useful commands for working with RHEL server.
+"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://lotusirous.github.io/posts/offline-install-tips/" />
 
-<body>
 
-<header class="icons">
+
+
+
+<link rel="stylesheet" href="https://lotusirous.github.io/assets/style.css">
+
+
+<link rel="stylesheet" href="https://lotusirous.github.io/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://lotusirous.github.io/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://lotusirous.github.io/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Install packages offline on RHEL-based distribution"/>
+<meta name="twitter:description" content="Sometimes, you want to install a software in offline environment."/>
+
+
+
+<meta property="og:title" content="Install packages offline on RHEL-based distribution" />
+<meta property="og:description" content="Sometimes, you want to install a software in offline environment." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lotusirous.github.io/posts/offline-install-tips/" />
+<meta property="article:published_time" content="2017-01-14T23:04:37+09:00" />
+<meta property="article:modified_time" content="2017-01-14T23:04:37+09:00" />
+
+
+
+
+
+
+  </head>
+  <body >
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="https://lotusirous.github.io/" class="logo" style="text-decoration: none;">
   
-    <a href="https://lotusirous.github.io/">𝙺 𝙷 𝙰</a>
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">/home/khant </span>
+    <span class="logo__cursor"></span>
   
-  
-    <nav>
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
     
-      <a href="/" >
+      
         
-          
-          
-          <span class="hidden"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg></span>
-          <span >/home</span>
+          <li><a href="/">/home</a></li>
         
-      </a>
+      
+        
+          <li><a href="/about/">/about</a></li>
+        
+      
+        
+          <li><a href="mailto:ngtrongkha92@gmail.com">/mail</a></li>
+        
+      
     
-      <a href="/about/" >
-        
-          
-          
-          <span class="hidden"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M528 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-352 96c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zm112 236.8c0 10.6-10 19.2-22.4 19.2H86.4C74 384 64 375.4 64 364.8v-19.2c0-31.8 30.1-57.6 67.2-57.6h5c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h5c37.1 0 67.2 25.8 67.2 57.6v19.2zM512 312c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-64c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-64c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16z"/></svg></span>
-          <span >/about</span>
-        
-      </a>
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
     
-      <a href="mailto:ngtrongkha92@gmail.com" >
-        
-          
-          
-          <span class="hidden"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg></span>
-          <span >/mail</span>
-        
-      </a>
+      
+        <li><a href="/">/home</a></li>
+      
     
-    </nav>
-  
-  
+      
+        <li><a href="/about/">/about</a></li>
+      
+    
+      
+        <li><a href="mailto:ngtrongkha92@gmail.com">/mail</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
 </header>
 
-<article>
-  <header>
-    <h1>Install packages offline on RHEL-based distribution</h1>
-    <time datetime="2017-01-14T23:04:37&#43;09:00">January 14, 2017</time>
-  </header>
-  <p>Some of my customers have policies to install packages in offline environment. This article summarized useful commands for working with RHEL server.</p>
+
+      <hr/>
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h2 class="post-title"><a href="https://lotusirous.github.io/posts/offline-install-tips/">Install packages offline on RHEL-based distribution</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2017-01-14
+        </span>
+
+        
+          
+        
+      
+
+      
+      
+        <span class="post-read-time">— 1 min read</span>
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      <p>Some of my customers have policies to install packages in offline environment. This article summarized useful commands for working with RHEL server.</p>
 <h2 id="download-and-install-packages-for-rhel-distribution">Download and install packages for RHEL distribution</h2>
 <p>The following command prepares a folder with installation packages</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-sh" data-lang="sh">yum install --downloadonly --downloaddir<span style="color:#ff79c6">=</span>&lt;directory&gt; &lt;package&gt;
@@ -67,10 +160,63 @@ yum --disablerepo<span style="color:#ff79c6">=</span>* localinstall *.rpm
 <p>The following command installs <code>keras</code> package from local</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">pip install --no-index --find-links . keras
 </code></pre></div>
-</article>
+    </div>
+    
 
 
+    
+      
+    
 
-</body>
+    </div>
 
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="https://lotusirous.github.io/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">/home/khant </span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://lotusirous.github.io/assets/main.js"></script>
+<script src="https://lotusirous.github.io/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-133942986-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+  </body>
 </html>
