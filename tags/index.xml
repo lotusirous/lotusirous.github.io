@@ -6,9 +6,46 @@
     <description>Recent content in Tags on 𝙺 𝙷 𝙰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 01 Aug 2019 10:37:30 +0900</lastBuildDate>
     
 	<atom:link href="https://lotusirous.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>container</title>
+      <link>https://lotusirous.github.io/tags/container/</link>
+      <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
+      
+      <guid>https://lotusirous.github.io/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>https://lotusirous.github.io/tags/devops/</link>
+      <pubDate>Thu, 01 Aug 2019 10:37:30 +0900</pubDate>
+      
+      <guid>https://lotusirous.github.io/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>editor</title>
+      <link>https://lotusirous.github.io/tags/editor/</link>
+      <pubDate>Sat, 20 Jan 2018 09:50:39 +0900</pubDate>
+      
+      <guid>https://lotusirous.github.io/tags/editor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://lotusirous.github.io/tags/vim/</link>
+      <pubDate>Sat, 20 Jan 2018 09:50:39 +0900</pubDate>
+      
+      <guid>https://lotusirous.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
