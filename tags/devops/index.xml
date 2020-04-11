@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>devops on /home/khant</title>
+    <title>devops on 𝙺 𝙷 𝙰</title>
     <link>https://lotusirous.github.io/tags/devops/</link>
-    <description>Recent content in devops on /home/khant</description>
+    <description>Recent content in devops on 𝙺 𝙷 𝙰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Aug 2019 10:37:30 +0900</lastBuildDate>
@@ -18,6 +18,15 @@
       
       <guid>https://lotusirous.github.io/posts/update-docker/</guid>
       <description>&lt;p&gt;Docker does not have a command to update your images to latest version that you have already pulled in your system by default. Sometimes, we want to update image to latest version because of bugs or vulnerabilities. This action is similar to &lt;code&gt;apt update &amp;amp;&amp;amp; apt upgrade&lt;/code&gt; in debian-based system.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Install packages offline on RHEL-based distribution</title>
+      <link>https://lotusirous.github.io/posts/offline-install-tips/</link>
+      <pubDate>Sat, 14 Jan 2017 23:04:37 +0900</pubDate>
+      
+      <guid>https://lotusirous.github.io/posts/offline-install-tips/</guid>
+      <description>&lt;p&gt;Some of my customers have policies to install packages in offline environment. This article summarized useful commands for working with RHEL server.&lt;/p&gt;</description>
     </item>
     
   </channel>

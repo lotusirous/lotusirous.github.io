@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://lotusirous.github.io/</loc>
-    <lastmod>2019-08-01T10:37:30+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://lotusirous.github.io/tags/container/</loc>
     <lastmod>2019-08-01T10:37:30+09:00</lastmod>
   </url>
@@ -29,6 +24,11 @@
   
   <url>
     <loc>https://lotusirous.github.io/posts/update-docker/</loc>
+    <lastmod>2019-08-01T10:37:30+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lotusirous.github.io/</loc>
     <lastmod>2019-08-01T10:37:30+09:00</lastmod>
   </url>
   
