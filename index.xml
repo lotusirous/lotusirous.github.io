@@ -6,10 +6,21 @@
     <description>Recent content on 𝙺 𝙷 𝙰</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Aug 2019 10:37:30 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 18 Aug 2019 12:50:37 +0900</lastBuildDate>
     
 	<atom:link href="https://lotusirous.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Build a Micro ORM in go</title>
+      <link>https://lotusirous.github.io/posts/data-mapper-in-go/</link>
+      <pubDate>Sun, 18 Aug 2019 12:50:37 +0900</pubDate>
+      
+      <guid>https://lotusirous.github.io/posts/data-mapper-in-go/</guid>
+      <description>&lt;h2 id=&#34;the-problem-of-orm-library&#34;&gt;The problem of ORM library&lt;/h2&gt;
+&lt;p&gt;Writing a data access layer is boring for developer who is not familiar with SQL and the Paradox of Choice with ORM libraries.
+Many developers usually use a common ORM library on Github and might end up with unexpected behaviors because some features in the library do over-engineering their requirements.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Update all docker images</title>

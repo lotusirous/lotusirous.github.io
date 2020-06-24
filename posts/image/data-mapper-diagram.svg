@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="681" height="238" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <clipPath id="mx-clip-214-31-302-26-0">
+   <rect id="svg_1" height="26" width="302" y="31" x="214"/>
+  </clipPath>
+  <clipPath id="mx-clip-214-57-302-26-0">
+   <rect id="svg_2" height="26" width="302" y="57" x="214"/>
+  </clipPath>
+  <clipPath id="mx-clip-214-83-302-26-0">
+   <rect id="svg_3" height="26" width="302" y="83" x="214"/>
+  </clipPath>
+  <clipPath id="mx-clip-214-109-302-26-0">
+   <rect id="svg_4" height="26" width="302" y="109" x="214"/>
+  </clipPath>
+  <clipPath id="mx-clip-214-135-302-26-0">
+   <rect id="svg_5" height="26" width="302" y="135" x="214"/>
+  </clipPath>
+  <clipPath id="mx-clip-214-161-302-26-0">
+   <rect id="svg_6" height="26" width="302" y="161" x="214"/>
+  </clipPath>
+  <clipPath id="mx-clip-214-187-302-26-0">
+   <rect id="svg_7" height="26" width="302" y="187" x="214"/>
+  </clipPath>
+  <clipPath id="mx-clip-214-213-302-26-0">
+   <rect id="svg_8" height="26" width="302" y="213" x="214"/>
+  </clipPath>
+  <clipPath id="mx-clip-4-31-152-26-0">
+   <rect id="svg_9" height="26" width="152" y="31" x="4"/>
+  </clipPath>
+  <clipPath id="mx-clip-4-57-152-26-0">
+   <rect id="svg_10" height="26" width="152" y="57" x="4"/>
+  </clipPath>
+  <clipPath id="mx-clip-4-83-152-26-0">
+   <rect id="svg_11" height="26" width="152" y="83" x="4"/>
+  </clipPath>
+  <clipPath id="mx-clip-4-109-152-26-0">
+   <rect id="svg_12" height="26" width="152" y="109" x="4"/>
+  </clipPath>
+  <clipPath id="mx-clip-4-135-152-26-0">
+   <rect id="svg_13" height="26" width="152" y="135" x="4"/>
+  </clipPath>
+  <clipPath id="mx-clip-4-161-152-26-0">
+   <rect id="svg_14" height="26" width="152" y="161" x="4"/>
+  </clipPath>
+  <clipPath id="mx-clip-4-187-152-26-0">
+   <rect id="svg_15" height="26" width="152" y="187" x="4"/>
+  </clipPath>
+  <clipPath id="mx-clip-4-213-152-26-0">
+   <rect id="svg_16" height="26" width="152" y="213" x="4"/>
+  </clipPath>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_17">
+   <path id="svg_18" stroke-miterlimit="10" stroke="#666666" fill="#f5f5f5" d="m620,93c0,-21.33 60,-21.33 60,0l0,48c0,21.33 -60,21.33 -60,0l0,-48z"/>
+   <path id="svg_19" stroke-miterlimit="10" stroke="#666666" fill="none" d="m620,93c0,16 60,16 60,0"/>
+   <path id="svg_20" stroke-dasharray="6 6" stroke-miterlimit="10" stroke-width="2" stroke="#dedede" fill="none" d="m528.24,117l83.52,0"/>
+   <path id="svg_21" stroke-miterlimit="10" stroke-width="2" stroke="#dedede" fill="#dedede" d="m522.24,117l8,-4l-2,4l2,4l-8,-4z"/>
+   <path id="svg_22" stroke-miterlimit="10" stroke-width="2" stroke="#dedede" fill="#dedede" d="m617.76,117l-8,4l2,-4l-2,-4l8,4z"/>
+   <path id="svg_23" stroke-dasharray="6 6" stroke-miterlimit="10" stroke-width="2" stroke="#dedede" fill="none" d="m210,117l-41.76,0"/>
+   <path id="svg_24" stroke-miterlimit="10" stroke-width="2" stroke="#dedede" fill="#dedede" d="m162.24,117l8,-4l-2,4l2,4l-8,-4z"/>
+   <path id="svg_25" stroke-miterlimit="10" stroke="#6c8ebf" fill="#dae8fc" d="m210,26l0,-26l310,0l0,26"/>
+   <path id="svg_26" stroke-miterlimit="10" stroke="#6c8ebf" fill="none" d="m210,26l0,208l310,0l0,-208"/>
+   <path id="svg_27" stroke-miterlimit="10" stroke="#6c8ebf" fill="none" d="m210,26l310,0"/>
+   <g id="svg_28" font-size="14px" text-anchor="middle" font-weight="bold" font-family="Helvetica" fill="#000000">
+    <text id="svg_29" y="19.5" x="364.5">UserStore</text>
+   </g>
+   <rect id="svg_30" stroke="#000000" fill="#ffffff" height="26" width="310" y="26" x="210"/>
+   <g id="svg_31" font-size="13px" clip-path="url(#mx-clip-214-31-302-26-0)" font-family="Georgia" fill="#000000">
+    <text id="svg_32" y="44.5" x="215.5">+ Create(context.Context, *User): error</text>
+   </g>
+   <rect id="svg_33" stroke="#000000" fill="#ffffff" height="26" width="310" y="52" x="210"/>
+   <g id="svg_34" font-size="13px" clip-path="url(#mx-clip-214-57-302-26-0)" font-family="Georgia" fill="#000000">
+    <text id="svg_35" y="70.5" x="215.5">+ Update(context.Context, *User): error</text>
+   </g>
+   <rect id="svg_36" stroke="#000000" fill="#ffffff" height="26" width="310" y="78" x="210"/>
+   <g id="svg_37" font-size="13px" clip-path="url(#mx-clip-214-83-302-26-0)" font-family="Georgia" fill="#000000">
+    <text id="svg_38" y="96.5" x="215.5">+ Delete(context.Context, *User): error</text>
+   </g>
+   <rect id="svg_39" stroke="#000000" fill="#ffffff" height="26" width="310" y="104" x="210"/>
+   <g id="svg_40" font-size="13px" clip-path="url(#mx-clip-214-109-302-26-0)" font-family="Georgia" fill="#000000">
+    <text id="svg_41" y="122.5" x="215.5">+ Find(context.Context, int64): (*User, error)</text>
+   </g>
+   <rect id="svg_42" stroke="#000000" fill="#ffffff" height="26" width="310" y="130" x="210"/>
+   <g id="svg_43" font-size="13px" clip-path="url(#mx-clip-214-135-302-26-0)" font-family="Georgia" fill="#000000">
+    <text id="svg_44" y="148.5" x="215.5">+ List(context.Context): ([]*User, error)</text>
+   </g>
+   <rect id="svg_45" stroke="#000000" fill="#ffffff" height="26" width="310" y="156" x="210"/>
+   <g id="svg_46" font-size="13px" clip-path="url(#mx-clip-214-161-302-26-0)" font-family="Georgia" fill="#000000">
+    <text id="svg_47" y="174.5" x="215.5">+ FindLogin(context.Context, string): (*User, error)</text>
+   </g>
+   <rect id="svg_48" stroke="#000000" fill="#ffffff" height="26" width="310" y="182" x="210"/>
+   <g id="svg_49" font-size="13px" clip-path="url(#mx-clip-214-187-302-26-0)" font-family="Georgia" fill="#000000">
+    <text id="svg_50" y="200.5" x="215.5">+ FindActive(context.Context): ([]*User, error)</text>
+   </g>
+   <rect id="svg_51" stroke="#000000" fill="#ffffff" height="26" width="310" y="208" x="210"/>
+   <g id="svg_52" font-size="13px" clip-path="url(#mx-clip-214-213-302-26-0)" font-family="Georgia" fill="#000000">
+    <text id="svg_53" y="226.5" x="215.5">+ Count(context.Context): (int64, error)</text>
+   </g>
+   <path id="svg_54" stroke-miterlimit="10" stroke="#d6b656" fill="#fff2cc" d="m0,26l0,-26l160,0l0,26"/>
+   <path id="svg_55" stroke-miterlimit="10" stroke="#d6b656" fill="none" d="m0,26l0,208l160,0l0,-208"/>
+   <path id="svg_56" stroke-miterlimit="10" stroke="#d6b656" fill="none" d="m0,26l160,0"/>
+   <g id="svg_57" font-size="14px" text-anchor="middle" font-weight="bold" font-family="Helvetica" fill="#000000">
+    <text id="svg_58" y="19.5" x="79.5">User</text>
+   </g>
+   <rect id="svg_59" fill="#ffffff" height="26" width="160" y="26" x="0"/>
+   <g id="svg_60" font-size="13px" clip-path="url(#mx-clip-4-31-152-26-0)" font-family="Georgia" fill="#242424">
+    <text id="svg_61" y="44.5" x="5.5">+ Login: string</text>
+   </g>
+   <rect id="svg_62" fill="#ffffff" height="26" width="160" y="52" x="0"/>
+   <g id="svg_63" font-size="13px" clip-path="url(#mx-clip-4-57-152-26-0)" font-family="Georgia" fill="#242424">
+    <text id="svg_64" y="70.5" x="5.5">+ Email: string</text>
+   </g>
+   <rect id="svg_65" fill="#ffffff" height="26" width="160" y="78" x="0"/>
+   <g id="svg_66" font-size="13px" clip-path="url(#mx-clip-4-83-152-26-0)" font-family="Georgia" fill="#242424">
+    <text id="svg_67" y="96.5" x="5.5">+ Avatar: string</text>
+   </g>
+   <rect id="svg_68" fill="#ffffff" height="26" width="160" y="104" x="0"/>
+   <g id="svg_69" font-size="13px" clip-path="url(#mx-clip-4-109-152-26-0)" font-family="Georgia" fill="#242424">
+    <text id="svg_70" y="122.5" x="5.5">+ Active: bool</text>
+   </g>
+   <rect id="svg_71" fill="#ffffff" height="26" width="160" y="130" x="0"/>
+   <g id="svg_72" font-size="13px" clip-path="url(#mx-clip-4-135-152-26-0)" font-family="Georgia" fill="#242424">
+    <text id="svg_73" y="148.5" x="5.5">+ LastLogin: int64</text>
+   </g>
+   <rect id="svg_74" fill="#ffffff" height="26" width="160" y="156" x="0"/>
+   <g id="svg_75" font-size="13px" clip-path="url(#mx-clip-4-161-152-26-0)" font-family="Georgia" fill="#242424">
+    <text id="svg_76" y="174.5" x="5.5">+ Created: int64</text>
+   </g>
+   <rect id="svg_77" fill="#ffffff" height="26" width="160" y="182" x="0"/>
+   <g id="svg_78" font-size="13px" clip-path="url(#mx-clip-4-187-152-26-0)" font-family="Georgia" fill="#242424">
+    <text id="svg_79" y="200.5" x="5.5">+ Updated: int64</text>
+   </g>
+   <rect id="svg_80" stroke="#d6b656" fill="#fff2cc" height="26" width="160" y="208" x="0"/>
+   <g id="svg_81" font-size="13px" clip-path="url(#mx-clip-4-213-152-26-0)" font-family="Georgia" fill="#000000">
+    <text id="svg_82" y="226.5" x="5.5">+ Validate(): bool</text>
+   </g>
+  </g>
+ </g>
+</svg>

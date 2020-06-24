@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Build a Micro ORM in go :: 𝙺 𝙷 𝙰</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="The problem of ORM library Writing a data access layer is boring for developer who is not familiar with SQL and the Paradox of Choice with ORM libraries. Many developers usually use a common ORM library on Github and might end up with unexpected behaviors because some features in the library do over-engineering their requirements.
+"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<link rel="canonical" href="https://lotusirous.github.io/posts/data-mapper-in-go/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://lotusirous.github.io/assets/style.css">
+
+
+<link rel="stylesheet" href="https://lotusirous.github.io/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://lotusirous.github.io/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://lotusirous.github.io/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Build a Micro ORM in go"/>
+<meta name="twitter:description" content="Writing a data mapper to access database is boring, thus many developers usually come with an ORM library at the first place without known its drawbacks. Then they perform some tricks to meet ORM library. This article illustrates a process to build your own data layer with `sqlx` - a well-extended design from `database/sql`"/>
+
+
+
+<meta property="og:title" content="Build a Micro ORM in go" />
+<meta property="og:description" content="Writing a data mapper to access database is boring, thus many developers usually come with an ORM library at the first place without known its drawbacks. Then they perform some tricks to meet ORM library. This article illustrates a process to build your own data layer with `sqlx` - a well-extended design from `database/sql`" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lotusirous.github.io/posts/data-mapper-in-go/" />
+<meta property="article:published_time" content="2019-08-18T12:50:37+09:00" />
+<meta property="article:modified_time" content="2019-08-18T12:50:37+09:00" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="https://lotusirous.github.io/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">/blog/khant </span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/posts">/posts</a></li>
+        
+      
+        
+          <li><a href="/tags">/tags</a></li>
+        
+      
+        
+          <li><a href="/research/">/research</a></li>
+        
+      
+        
+          <li><a href="/about/">/about</a></li>
+        
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/posts">/posts</a></li>
+      
+    
+      
+        <li><a href="/tags">/tags</a></li>
+      
+    
+      
+        <li><a href="/research/">/research</a></li>
+      
+    
+      
+        <li><a href="/about/">/about</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      
+    </span>
+  </span>
+</header>
+
+
+      <hr/>
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h2 class="post-title"><a href="https://lotusirous.github.io/posts/data-mapper-in-go/">Build a Micro ORM in go</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2019-08-18
+        </span>
+
+        
+          
+        
+      
+
+      
+      
+        <span class="post-read-time">— 7 min read</span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          # <a href="https://lotusirous.github.io/tags/architecture/">architecture</a>&nbsp;
+        
+          # <a href="https://lotusirous.github.io/tags/go/">go</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <h2 id="the-problem-of-orm-library">The problem of ORM library</h2>
+<p>Writing a data access layer is boring for developer who is not familiar with SQL and the Paradox of Choice with ORM libraries.
+Many developers usually use a common ORM library on Github and might end up with unexpected behaviors because some features in the library do over-engineering their requirements.</p>
+<p>The object/relational mapping problem is <em>hard</em> since essentially what an ORM library is doing is synchronizing between two quite different representations of data.
+Many blog posts have been discussing for years by many big authors, including <a href="https://martinfowler.com/bliki/OrmHate.html">OrmHate</a> by Martin Fowler (not against ORM, but worth mentioning anyway), <a href="https://blog.codinghorror.com/object-relational-mapping-is-the-vietnam-of-computer-science/">Object-Relational Mapping Is the Vietnam of Computer Science</a> by Jeff Atwood, The Vietnam of Computer Science by Ted Neward, ORM Is an Anti-Pattern by Laurie Voss, and many others.</p>
+<p>Starting your baby steps with a <a href="https://www.yaplex.com/blog/micro-orm-vs-orm/">Micro-ORM</a> seems to be a good choice because of simplicity and maintainability. In this tutorial, I will show you the steps to build a micro ORM was taken from <a href="https://github.com/drone/drone">drone</a> - a elegant go project structure.</p>
+<h2 id="the-design-of-data-mapper">The design of data mapper</h2>
+<p>Before jump into the implementation detail, let&rsquo;s summarize the definition of data mapper.</p>
+<blockquote>
+<p>Data mapper is a layer of mappers that moves data between objects and a database while keeping them independent of each other and the mapper itself.</p>
+</blockquote>
+<p>A data mapper contains 3 parts from the definition: an object, a mapper and a database connection. In this post, I use a <code>User</code> object existed in many system and a <code>UserStore</code> to group data access actions on a data store. <code>UserStore</code> defines domain logic to manipulate the data from data store. Each action contains a mapper to move data between application objects and database. For example, a <code>Create</code> method have a mapper to translate a object to <code>CREATE</code> SQL statement for creating a new user record in the table. The database connection will be established from the main function by dependency injection.</p>
+<p>Figure 1 depicts a relationship between a user object and group of mapper interface and database.</p>
+<figure class="center">
+    <img src="/posts/image/data-mapper-diagram.svg"
+         alt="Figure 1: Relationship between User object, UserStore and database"/> <figcaption>
+            <p style="text-align: center;font-style: italic;">Figure 1: Relationship between <code>User</code> object, <code>UserStore</code> and database</p>
+        </figcaption>
+</figure>
+<p>The following <code>User</code> struct contains 7 properties: login (<code>login</code>), active (<code>active</code>), showing (<code>avatar</code>) and tracking (<code>created, updated, lastLogin</code>). A tricky type <code>int64</code> is using for tracking properties to store timestamp because timestamp not only removes a couple between time and server time zone compare to parsing <code>string</code> format but also does not depends on timezone.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#6272a4">// User represents a user of the system.
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">type</span> User <span style="color:#8be9fd;font-style:italic">struct</span> {
+  Login     <span style="color:#8be9fd">string</span>
+  Email     <span style="color:#8be9fd">string</span>
+  Avatar    <span style="color:#8be9fd">string</span>
+  Active    <span style="color:#8be9fd">bool</span>
+  LastLogin <span style="color:#8be9fd">int64</span>
+  Created   <span style="color:#8be9fd">int64</span>
+  Updated   <span style="color:#8be9fd">int64</span>
+}
+</code></pre></div><p>The <code>UserStore</code> methods are divided into commands (<code>Create, Update, Delete</code>) and queries (<code>Find, List, FindLogin, FindActive, Count</code>) for write/read operations respectively. The command group changes the state of <code>User</code> object while queries group only read the <code>User</code> object.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#6272a4">// UserStore defines operations for working with users.
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">type</span> UserStore <span style="color:#8be9fd;font-style:italic">interface</span> {
+
+  <span style="color:#6272a4">// Create persists a new user to the datastore.
+</span><span style="color:#6272a4"></span>  <span style="color:#50fa7b">Create</span>(context.Context, <span style="color:#ff79c6">*</span>User) <span style="color:#8be9fd">error</span>
+
+  <span style="color:#6272a4">// Update persists an updated user to the datastore.
+</span><span style="color:#6272a4"></span>  <span style="color:#50fa7b">Update</span>(context.Context, <span style="color:#ff79c6">*</span>User) <span style="color:#8be9fd">error</span>
+
+  <span style="color:#6272a4">// Delete deletes a user from the datastore.
+</span><span style="color:#6272a4"></span>  <span style="color:#50fa7b">Delete</span>(context.Context, <span style="color:#ff79c6">*</span>User) <span style="color:#8be9fd">error</span>
+
+  <span style="color:#6272a4">// Find returns a user from the data store.
+</span><span style="color:#6272a4"></span>  <span style="color:#50fa7b">Find</span>(context.Context, <span style="color:#8be9fd">int64</span>) (<span style="color:#ff79c6">*</span>User, <span style="color:#8be9fd">error</span>)
+
+  <span style="color:#6272a4">// List returns a list of users from the datastore.
+</span><span style="color:#6272a4"></span>  <span style="color:#50fa7b">List</span>(context.Context) ([]<span style="color:#ff79c6">*</span>User, <span style="color:#8be9fd">error</span>)
+
+  <span style="color:#6272a4">// FindLogin returns a user from the datastore by username.
+</span><span style="color:#6272a4"></span>  <span style="color:#50fa7b">FindLogin</span>(context.Context, <span style="color:#8be9fd">string</span>) (<span style="color:#ff79c6">*</span>User, <span style="color:#8be9fd">error</span>)
+
+  <span style="color:#6272a4">// FindActive returns a list of active users from the datastore.
+</span><span style="color:#6272a4"></span>  <span style="color:#50fa7b">FindActive</span>(context.Context) ([]<span style="color:#ff79c6">*</span>User, <span style="color:#8be9fd">error</span>)
+
+  <span style="color:#6272a4">// Count returns a count of users.
+</span><span style="color:#6272a4"></span>  <span style="color:#50fa7b">Count</span>(context.Context) (<span style="color:#8be9fd">int64</span>, <span style="color:#8be9fd">error</span>)
+}
+</code></pre></div><p>I use <code>context.Context</code> as a first parameter for each method to carries deadlines, cancellation signals, and other request-scoped values.</p>
+<h2 id="database-connection">Database connection</h2>
+<p>Although the built-in library <code>database/sql</code> provides a generic sql driver, it does not provides naming query statement and binding execution which provided by a <code>sqlx</code>. A common <code>Locker</code> interface to lock and unlock a share resource (SQLite for testing) and distinguish driver type with <code>driver</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#6272a4">// Driver defines the database driver.
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">type</span> Driver <span style="color:#8be9fd">int</span>
+
+<span style="color:#6272a4">// Database driver enums.
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">const</span> (
+  Sqlite = <span style="color:#ff79c6">iota</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>
+  Mysql
+  Postgres
+)
+
+<span style="color:#6272a4">// DB is a pool of zero or more underlying connections to
+</span><span style="color:#6272a4">// the database.
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">type</span> DB <span style="color:#8be9fd;font-style:italic">struct</span> {
+  conn   <span style="color:#ff79c6">*</span>sqlx.DB
+  lock   Locker
+  driver Driver
+}
+
+<span style="color:#6272a4">// A Locker represents an object that can be locked and unlocked.
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">type</span> Locker <span style="color:#8be9fd;font-style:italic">interface</span> {
+  <span style="color:#50fa7b">Lock</span>()
+  <span style="color:#50fa7b">Unlock</span>()
+  <span style="color:#50fa7b">RLock</span>()
+  <span style="color:#50fa7b">RUnlock</span>()
+}
+</code></pre></div><p>The pattern <strong>commands</strong> and <strong>queries</strong> is implemented by <code>Queryer</code>, <code>Binder</code> and <code>Execer</code> helper interfaces.  <code>Binder</code> maps parameters to build a query while <code>Queryer</code> reads a row in database to return a <code>sql.Row</code> and the <code>Execer</code> performs an execution with a given query.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#8be9fd;font-style:italic">type</span> (
+  <span style="color:#6272a4">// Queryer interface defines a set of methods for
+</span><span style="color:#6272a4"></span>  <span style="color:#6272a4">// querying the database.
+</span><span style="color:#6272a4"></span>  Queryer <span style="color:#8be9fd;font-style:italic">interface</span> {
+    <span style="color:#50fa7b">Query</span>(query <span style="color:#8be9fd">string</span>, args <span style="color:#ff79c6">...</span><span style="color:#8be9fd;font-style:italic">interface</span>{}) (<span style="color:#ff79c6">*</span>sql.Rows, <span style="color:#8be9fd">error</span>)
+    <span style="color:#50fa7b">QueryRow</span>(query <span style="color:#8be9fd">string</span>, args <span style="color:#ff79c6">...</span><span style="color:#8be9fd;font-style:italic">interface</span>{}) <span style="color:#ff79c6">*</span>sql.Row
+  }
+
+  <span style="color:#6272a4">// Binder interface defines database field bindings.
+</span><span style="color:#6272a4"></span>  Binder <span style="color:#8be9fd;font-style:italic">interface</span> {
+    <span style="color:#50fa7b">BindNamed</span>(query <span style="color:#8be9fd">string</span>, arg <span style="color:#8be9fd;font-style:italic">interface</span>{}) (<span style="color:#8be9fd">string</span>, []<span style="color:#8be9fd;font-style:italic">interface</span>{}, <span style="color:#8be9fd">error</span>)
+  }
+
+  <span style="color:#6272a4">// Execer interface defines a set of methods for executing
+</span><span style="color:#6272a4"></span>  <span style="color:#6272a4">// read and write commands against the database.
+</span><span style="color:#6272a4"></span>  Execer <span style="color:#8be9fd;font-style:italic">interface</span> {
+    Queryer
+    <span style="color:#50fa7b">Exec</span>(query <span style="color:#8be9fd">string</span>, args <span style="color:#ff79c6">...</span><span style="color:#8be9fd;font-style:italic">interface</span>{}) (sql.Result, <span style="color:#8be9fd">error</span>)
+  }
+)
+</code></pre></div><p><code>View</code> and <code>Lock</code> wraps a read/write to database in a safe action with desired lock.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#6272a4">// View executes a function within the context of a managed read-only
+</span><span style="color:#6272a4">// transaction. Any error that is returned from the function is returned
+</span><span style="color:#6272a4">// from the View() method.
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">func</span> (db <span style="color:#ff79c6">*</span>DB) <span style="color:#50fa7b">View</span>(fn <span style="color:#8be9fd;font-style:italic">func</span>(Queryer, Binder) <span style="color:#8be9fd">error</span>) <span style="color:#8be9fd">error</span> {
+  db.lock.<span style="color:#50fa7b">RLock</span>()
+  err <span style="color:#ff79c6">:=</span> <span style="color:#50fa7b">fn</span>(db.conn, db.conn)
+  db.lock.<span style="color:#50fa7b">RUnlock</span>()
+  <span style="color:#ff79c6">return</span> err
+}
+
+<span style="color:#6272a4">// Lock obtains a write lock to the database (sqlite only) and executes
+</span><span style="color:#6272a4">// a function. Any error that is returned from the function is returned
+</span><span style="color:#6272a4">// from the Lock() method.
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">func</span> (db <span style="color:#ff79c6">*</span>DB) <span style="color:#50fa7b">Lock</span>(fn <span style="color:#8be9fd;font-style:italic">func</span>(Execer, Binder) <span style="color:#8be9fd">error</span>) <span style="color:#8be9fd">error</span> {
+  db.lock.<span style="color:#50fa7b">Lock</span>()
+  err <span style="color:#ff79c6">:=</span> <span style="color:#50fa7b">fn</span>(db.conn, db.conn)
+  db.lock.<span style="color:#50fa7b">Unlock</span>()
+  <span style="color:#ff79c6">return</span> err
+}
+</code></pre></div><p>The <code>Update</code> action requires rollback a executed action when error happened.
+A tricky <code>defer</code> wraps <code>recover</code> and <code>commit</code> to support atomic transaction.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#6272a4">// Update executes a function within the context of a read-write managed
+</span><span style="color:#6272a4">// transaction. If no error is returned from the function then the
+</span><span style="color:#6272a4">// transaction is committed. If an error is returned then the entire
+</span><span style="color:#6272a4">// transaction is rolled back. Any error that is returned from the function
+</span><span style="color:#6272a4">// or returned from the commit is returned from the Update() method.
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">func</span> (db <span style="color:#ff79c6">*</span>DB) <span style="color:#50fa7b">Update</span>(fn <span style="color:#8be9fd;font-style:italic">func</span>(Execer, Binder) <span style="color:#8be9fd">error</span>) (err <span style="color:#8be9fd">error</span>) {
+  db.lock.<span style="color:#50fa7b">Lock</span>()
+  <span style="color:#ff79c6">defer</span> db.lock.<span style="color:#50fa7b">Unlock</span>()
+
+  tx, err <span style="color:#ff79c6">:=</span> db.conn.<span style="color:#50fa7b">Begin</span>()
+  <span style="color:#ff79c6">if</span> err <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nil</span> {
+    <span style="color:#ff79c6">return</span> err
+  }
+
+  <span style="color:#ff79c6">defer</span> <span style="color:#8be9fd;font-style:italic">func</span>() {
+    <span style="color:#ff79c6">if</span> p <span style="color:#ff79c6">:=</span> <span style="color:#8be9fd;font-style:italic">recover</span>(); p <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nil</span> {
+      err = tx.<span style="color:#50fa7b">Rollback</span>()
+      debug.<span style="color:#50fa7b">PrintStack</span>()
+    } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> err <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nil</span> {
+      tx.<span style="color:#50fa7b">Rollback</span>()
+    } <span style="color:#ff79c6">else</span> {
+      err = tx.<span style="color:#50fa7b">Commit</span>()
+    }
+  }()
+
+  err = <span style="color:#50fa7b">fn</span>(tx, db.conn)
+  <span style="color:#ff79c6">return</span> err
+}
+</code></pre></div><h2 id="the-mapper-detail">The mapper detail</h2>
+<p>The declaration of <code>queryBase</code> is using for mapping fields. Since the result reads fields from <code>SELECT</code> statement, it shares the mapping with the child queries. For example, the <code>queryKey</code> is our domain logic to find a user by a given id. The usage of  <code>SELECT * FROM users</code> is not clear which fields is returned from database in order to guaranty the fields order and data types.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#8be9fd;font-style:italic">const</span> queryBase = <span style="color:#f1fa8c">`
+</span><span style="color:#f1fa8c">SELECT
+</span><span style="color:#f1fa8c">user_id,
+</span><span style="color:#f1fa8c">user_login,
+</span><span style="color:#f1fa8c">user_email,
+</span><span style="color:#f1fa8c">user_avatar,
+</span><span style="color:#f1fa8c">user_active,
+</span><span style="color:#f1fa8c">user_last_login,
+</span><span style="color:#f1fa8c">user_created,
+</span><span style="color:#f1fa8c">user_updated,
+</span><span style="color:#f1fa8c">`</span>
+
+<span style="color:#8be9fd;font-style:italic">const</span> queryKey = queryBase <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">`
+</span><span style="color:#f1fa8c">FROM users
+</span><span style="color:#f1fa8c">WHERE user_id = :user_id
+</span><span style="color:#f1fa8c">`</span>
+</code></pre></div><p>We do fields mapping as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go">
+<span style="color:#6272a4">// helper function converts the User structure to a set
+</span><span style="color:#6272a4">// of named query parameters.
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">toParams</span>(u <span style="color:#ff79c6">*</span>core.User) <span style="color:#8be9fd;font-style:italic">map</span>[<span style="color:#8be9fd">string</span>]<span style="color:#8be9fd;font-style:italic">interface</span>{} {
+	<span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">map</span>[<span style="color:#8be9fd">string</span>]<span style="color:#8be9fd;font-style:italic">interface</span>{}{
+		<span style="color:#f1fa8c">&#34;user_id&#34;</span>:         u.ID,
+		<span style="color:#f1fa8c">&#34;user_login&#34;</span>:      u.Login,
+		<span style="color:#f1fa8c">&#34;user_email&#34;</span>:      u.Email,
+		<span style="color:#f1fa8c">&#34;user_avatar&#34;</span>:     u.Avatar,
+		<span style="color:#f1fa8c">&#34;user_active&#34;</span>:     u.Active,
+		<span style="color:#f1fa8c">&#34;user_last_login&#34;</span>: u.LastLogin,
+		<span style="color:#f1fa8c">&#34;user_created&#34;</span>:    u.Created,
+		<span style="color:#f1fa8c">&#34;user_updated&#34;</span>:    u.Updated,
+	}
+}
+
+<span style="color:#6272a4">// helper function scans the sql.Row and copies the column
+</span><span style="color:#6272a4">// values to the destination object.
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">scanRow</span>(scanner db.Scanner, dest <span style="color:#ff79c6">*</span>core.User) <span style="color:#8be9fd">error</span> {
+	<span style="color:#ff79c6">return</span> scanner.<span style="color:#50fa7b">Scan</span>(
+		<span style="color:#ff79c6">&amp;</span>dest.Login,
+		<span style="color:#ff79c6">&amp;</span>dest.Email,
+		<span style="color:#ff79c6">&amp;</span>dest.Avatar,
+		<span style="color:#ff79c6">&amp;</span>dest.Active,
+		<span style="color:#ff79c6">&amp;</span>dest.LastLogin,
+		<span style="color:#ff79c6">&amp;</span>dest.Created,
+		<span style="color:#ff79c6">&amp;</span>dest.Updated,
+	)
+}
+</code></pre></div><p>The usage of  <code>interface{}</code> gives a generic type to map each field in <code>User</code> struct to map with a field in a record from SQL table. However, a drawback of type checking by compiler when compiling the mapper. We can overcome this issue with a wring a unit test.</p>
+<p>If we have many SQL statements, we can take advantage of finding similar word by editors (<code>cmd + d</code> in sublime text for example)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-go" data-lang="go"><span style="color:#6272a4">// Find returns a user from the datastore.
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">func</span> (s <span style="color:#ff79c6">*</span>userStore) <span style="color:#50fa7b">Find</span>(ctx context.Context, id <span style="color:#8be9fd">int64</span>) (<span style="color:#ff79c6">*</span>core.User, <span style="color:#8be9fd">error</span>) {
+	out <span style="color:#ff79c6">:=</span> <span style="color:#ff79c6">&amp;</span>core.User{ID: id}
+	err <span style="color:#ff79c6">:=</span> s.db.<span style="color:#50fa7b">View</span>(<span style="color:#8be9fd;font-style:italic">func</span>(queryer db.Queryer, binder db.Binder) <span style="color:#8be9fd">error</span> {
+		params <span style="color:#ff79c6">:=</span> <span style="color:#50fa7b">toParams</span>(out)
+		query, args, err <span style="color:#ff79c6">:=</span> binder.<span style="color:#50fa7b">BindNamed</span>(queryKey, params)
+		<span style="color:#ff79c6">if</span> err <span style="color:#ff79c6">!=</span> <span style="color:#ff79c6">nil</span> {
+			<span style="color:#ff79c6">return</span> err
+		}
+		row <span style="color:#ff79c6">:=</span> queryer.<span style="color:#50fa7b">QueryRow</span>(query, args<span style="color:#ff79c6">...</span>)
+		<span style="color:#ff79c6">return</span> <span style="color:#50fa7b">scanRow</span>(row, out)
+	})
+	<span style="color:#ff79c6">return</span> out, err
+}
+</code></pre></div><h2 id="wrap-up">Wrap-up</h2>
+<p>I have illustrated the baby step to create a micro ORM for mapping <code>User</code> data. The pattern approach provides a just enough technique for solving problems. The more detail can be found on <a href="https://github.com/lotusirous/realworld">Github</a> with an implemented <a href="https://github.com/gothinkster/realworld">real world application</a>.</p>
+<p>I hope this article will help you figure out how to design a good code in Go when working with SQL databases.</p>
+    </div>
+    
+
+
+    
+      
+    
+
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+
+        <span>© 2020 Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a></span>
+        <span> Theme <a href="https://github.com/lotusirous/hugo-terminal">Terminal</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://lotusirous.github.io/assets/main.js"></script>
+<script src="https://lotusirous.github.io/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-133942986-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+  </body>
+</html>
