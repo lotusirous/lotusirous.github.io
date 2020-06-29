@@ -2,19 +2,18 @@
 <html lang="en">
   <head>
     
-      <title>Tips for working with bash :: 𝙺 𝙷 𝙰</title>
+      <title>hacks :: 𝙺 𝙷 𝙰</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="Sometimes, you are doing awesome stuffs, but some noisy things bother you. The following tips might help you out.
-"/>
+<meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 
-<link rel="canonical" href="https://lotusirous.github.io/posts/bash-tricky/" />
+<link rel="canonical" href="https://lotusirous.github.io/tags/hacks/" />
 
 
 
@@ -31,20 +30,20 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tips for working with bash"/>
-<meta name="twitter:description" content="Sometimes, you are doing some awesome stuffs, but noisy things bother you. Those tips might help you out"/>
+<meta name="twitter:title" content="hacks"/>
+<meta name="twitter:description" content=""/>
 
 
 
-<meta property="og:title" content="Tips for working with bash" />
-<meta property="og:description" content="Sometimes, you are doing some awesome stuffs, but noisy things bother you. Those tips might help you out" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://lotusirous.github.io/posts/bash-tricky/" />
-<meta property="article:published_time" content="2020-06-24T10:52:39+07:00" />
-<meta property="article:modified_time" content="2020-06-24T10:52:39+07:00" />
+<meta property="og:title" content="hacks" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://lotusirous.github.io/tags/hacks/" />
+<meta property="og:updated_time" content="2020-06-24T10:52:39+07:00" />
 
 
 
+<link rel="alternate" type="application/rss+xml" href="/tags/hacks/index.xml" title="𝙺 𝙷 𝙰" />
 
 
 
@@ -130,66 +129,92 @@
   
   
 
-  <div class="post">
-    <h2 class="post-title"><a href="https://lotusirous.github.io/posts/bash-tricky/">Tips for working with bash</a></h2>
-    <div class="post-meta">
-      
-        <span class="post-date">
-          2020-06-24
-        </span>
+  
+  
+  
 
+  <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://lotusirous.github.io/posts/bash-tricky/">Tips for working with bash</a></h1>
+      <div class="post-meta">
         
+          <span class="post-date">
+            2020-06-24
+          </span>
+
           
         
-      
-
-      
-      
-        <span class="post-read-time">— 1 min read</span>
-      
-    </div>
-
-    
-      <span class="post-tags">
         
-          # <a href="https://lotusirous.github.io/tags/hacks/">hacks</a>&nbsp;
         
-      </span>
-    
+          <span class="post-read-time">— 1 min read</span>
+        
+      </div>
 
-    
-
-    <div class="post-content">
-      <p>Sometimes, you are doing awesome stuffs, but some noisy things bother you. The following tips might help you out.</p>
-<h2 id="skip-the-first-line-in-result">Skip the first line in result</h2>
-<p>Consider the following example, you want to skip the first line for parsing json with <code>jq</code> command.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">$ cat <span style="color:#f1fa8c">&lt;&lt;EOF
-</span><span style="color:#f1fa8c">skip me please
-</span><span style="color:#f1fa8c">{
-</span><span style="color:#f1fa8c">    &#34;hello&#34;: &#34;world&#34;
-</span><span style="color:#f1fa8c">}
-</span><span style="color:#f1fa8c">EOF</span>
-</code></pre></div><p>Solution, the built-in variable <code>NR&gt;1</code>(number of records are greater than 1) in <code>awk</code> skips the first line.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">$ cat <span style="color:#f1fa8c">&lt;&lt;EOF |awk &#34;NR&gt;1&#34; |jq
-</span><span style="color:#f1fa8c">skip me please
-</span><span style="color:#f1fa8c">{
-</span><span style="color:#f1fa8c">    &#34;hello&#34;: &#34;world&#34;
-</span><span style="color:#f1fa8c">}
-</span><span style="color:#f1fa8c">EOF</span>
-</code></pre></div><p>The output will be parsed by <code>jq</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-json" data-lang="json">{
-  <span style="color:#ff79c6">&#34;hello&#34;</span>: <span style="color:#f1fa8c">&#34;world&#34;</span>
-}
-</code></pre></div>
-    </div>
-    
-
-
-    
       
-    
+        <span class="post-tags">
+          
+            # <a href="https://lotusirous.github.io/tags/hacks/">hacks</a>&nbsp;
+          
+        </span>
+      
 
+      
+
+      <div class="post-content">
+        
+          Sometimes, you are doing some awesome stuffs, but noisy things bother you. Those tips might help you out
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/bash-tricky/">Read more →</a></div>
+      
     </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="https://lotusirous.github.io/posts/pretty-json-inside-vim/">Pretty JSON inside Vim</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2018-01-20
+          </span>
+
+          
+        
+        
+        
+          <span class="post-read-time">— 1 min read</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            # <a href="https://lotusirous.github.io/tags/hacks/">hacks</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          Format JSON file in vim
+        
+      </div>
+      
+        <div><a class="read-more button" href="/posts/pretty-json-inside-vim/">Read more →</a></div>
+      
+    </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+    
+  </div>
+</div>
+
+  </div>
 
       </div>
 
