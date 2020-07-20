@@ -6,7 +6,7 @@
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="The problem of ORM library Writing a data access layer is boring for developer who is not familiar with SQL and the Paradox of Choice with ORM libraries. Many developers usually use a common ORM library on Github and might end up with unexpected behaviors because some features in the library do over-engineering their requirements.
+<meta name="description" content="The problem of ORM library Writing a data access layer is tedious for developers who are not familiar with SQL and the Paradox of Choice with ORM libraries. Many developers usually use a most-stared ORM library on Github and might end up with unexpected behaviors because some features in the library do over-engineering their requirements.
 "/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
@@ -163,8 +163,8 @@
 
     <div class="post-content">
       <h2 id="the-problem-of-orm-library">The problem of ORM library</h2>
-<p>Writing a data access layer is boring for developer who is not familiar with SQL and the Paradox of Choice with ORM libraries.
-Many developers usually use a common ORM library on Github and might end up with unexpected behaviors because some features in the library do over-engineering their requirements.</p>
+<p>Writing a data access layer is tedious for developers who are not familiar with SQL and the Paradox of Choice with ORM libraries.
+Many developers usually use a most-stared ORM library on Github and might end up with unexpected behaviors because some features in the library do over-engineering their requirements.</p>
 <p>The object/relational mapping problem is <em>hard</em> since essentially what an ORM library is doing is synchronizing between two quite different representations of data.
 Many blog posts have been discussing for years by many big authors, including <a href="https://martinfowler.com/bliki/OrmHate.html">OrmHate</a> by Martin Fowler (not against ORM, but worth mentioning anyway), <a href="https://blog.codinghorror.com/object-relational-mapping-is-the-vietnam-of-computer-science/">Object-Relational Mapping Is the Vietnam of Computer Science</a> by Jeff Atwood, The Vietnam of Computer Science by Ted Neward, ORM Is an Anti-Pattern by Laurie Voss, and many others.</p>
 <p>Starting your baby steps with a <a href="https://www.yaplex.com/blog/micro-orm-vs-orm/">Micro-ORM</a> seems to be a good choice because of simplicity and maintainability. In this tutorial, I will show you the steps to build a micro ORM was taken from <a href="https://github.com/drone/drone">drone</a> - a elegant go project structure.</p>

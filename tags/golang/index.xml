@@ -18,8 +18,8 @@
       
       <guid>https://lotusirous.github.io/posts/data-mapper-in-go/</guid>
       <description>&lt;h2 id=&#34;the-problem-of-orm-library&#34;&gt;The problem of ORM library&lt;/h2&gt;
-&lt;p&gt;Writing a data access layer is boring for developer who is not familiar with SQL and the Paradox of Choice with ORM libraries.
-Many developers usually use a common ORM library on Github and might end up with unexpected behaviors because some features in the library do over-engineering their requirements.&lt;/p&gt;</description>
+&lt;p&gt;Writing a data access layer is tedious for developers who are not familiar with SQL and the Paradox of Choice with ORM libraries.
+Many developers usually use a most-stared ORM library on Github and might end up with unexpected behaviors because some features in the library do over-engineering their requirements.&lt;/p&gt;</description>
     </item>
     
   </channel>
